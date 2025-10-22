@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Luciano 4E | Official Website - Worldwide Cuban Trap Latino Artist</title>
+    <meta name="description" content="Discover the official website of Luciano 4E, the worldwide Cuban Trap Latino and Hip-Hop artist. Stream new music, find tour dates, book a feature, and get exclusive merch from the voice of the streets.">
+    <meta name="keywords" content="Luciano 4E, Cuban Trap Latino, Worldwide Artist, Cuban Hip Hop, Latin Trap, Reggaeton, Cuban Rap, UK Drill, 4E Tapes, Redlight Single, Luciano 4E bookings, official website, new music">
+    <link rel="canonical" href="https://www.luciano4e.com/">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "Luciano 4E",
+      "url": "https://www.luciano4e.com",
+      "sameAs": [
+        "https://spotify.com",
+        "#"
+      ],
+      "image": "https://www.luciano4e.com/images/the-4e-tapes.jpg",
+      "genre": ["Trap Latino", "Hip Hop", "Rap", "UK Drill"],
+      "founder": {
+        "@type": "Person",
+        "name": "Luciano 4E",
+        "nationality": "Cuba"
+      },
+      "album": [
+        {
+          "@type": "MusicAlbum",
+          "name": "The 4E Tapes",
+          "sameAs": "https://spotify.com"
+        },
+        {
+          "@type": "MusicAlbum",
+          "name": "Genesis EP"
+        }
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "bookings",
+        "email": "bookings@luciano4e.com"
+      }
+    }
+    </script>
+    
+    <style>
+        /* CSS Document */
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #home {
+            /* Changed from #1a1a2e (purple) to #2e1a1a (red) */
+            background: radial-gradient(ellipse at center, #2e1a1a 0%, #0f0f0f 100%);
+        }
+
+        #about {
+            /* Changed from #1a1a2e (purple) to #2e1a1a (red) */
+            background: linear-gradient(135deg, #0f0f0f 0%, #2e1a1a 100%);
+        }
+
+        #contact {
+            /* Changed from #1a1a2e (purple) to #2e1a1a (red) */
+            background: radial-gradient(ellipse at center, #2e1a1a 0%, #0f0f0f 100%);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            height: 70px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .main-menu {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .menu-item {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .menu-item:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .menu-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #e52d27, #b31217);
+            transition: width 0.3s ease;
+        }
+
+        .menu-item:hover::after {
+            width: 100%;
+        }
+
+        .menu-item.active {
+            color: white;
+        }
+
+        .menu-item.active::after {
+            width: 100%;
+        }
+
+        .menu-item.external::before {
+            content: '↗';
+            margin-right: 5px;
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        /* Mobile menu toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Home Section with Coverflow */
+        .coverflow-wrapper {
+            width: 100%;
+
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+        }
+
+        .coverflow-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1200px;
+            position: relative;
+        }
+
+        .coverflow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .coverflow-item {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .coverflow-item .cover {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            background: #333;
+        }
+
+        .coverflow-item .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Reflection */
+        .coverflow-item .reflection {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transform: scaleY(-1);
+            opacity: 0.2;
+            filter: blur(2px);
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0) 0%, 
+                rgba(0, 0, 0, 0.8) 50%, 
+                rgba(0, 0, 0, 1) 100%);
+            overflow: hidden;
+        }
+
+        /* Active item (center) */
+        .coverflow-item.active {
+            z-index: 100;
+            transform: translateX(0) translateZ(0) rotateY(0deg);
+        }
+
+        .coverflow-item.active .cover {
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Navigation */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 200;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .nav-button.prev {
+            left: 50px;
+        }
+
+        .nav-button.next {
+            right: 50px;
+        }
+
+        /* Dots indicator */
+        .dots-container {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 200;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.3);
+        }
+
+        /* Info display */
+        .info {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            z-index: 200;
+        }
+
+        .info h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards;
+        }
+
+        .info p {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Play/Pause Button */
+        .play-pause-button {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            z-index: 200;
+        }
+
+        .play-pause-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .play-pause-button .pause-icon {
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            color: white;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .about-header h2 {
+            font-size: 48px;
+			margin-top: 60px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-header p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .about-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .about-visual {
+            position: relative;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .showcase-display {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .showcase-main {
+            position: relative;
+            width: 350px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(229, 45, 39, 0.1) 0%, rgba(179, 18, 23, 0.1) 100%);
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .showcase-logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(229, 45, 39, 0.4);
+        }
+
+        .showcase-logo svg {
+            width: 70%;
+            height: 70%;
+        }
+
+        .showcase-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .showcase-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .showcase-badges {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .badge:hover {
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            border-color: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(229, 45, 39, 0.3);
+        }
+
+        .badge:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(229, 45, 39, 0.3);
+        }
+
+        /* Decorative corner elements */
+        .corner-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid rgba(229, 45, 39, 0.3);
+        }
+
+        .corner-decoration.top-left {
+            top: -20px;
+            left: -20px;
+            border-right: none;
+            border-bottom: none;
+            border-radius: 20px 0 0 0;
+        }
+
+        .corner-decoration.bottom-right {
+            bottom: -20px;
+            right: -20px;
+            border-left: none;
+            border-top: none;
+            border-radius: 0 0 20px 0;
+        }
+
+        .about-info {
+            padding-left: 40px;
+        }
+
+        .about-info h3 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .about-info p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(229, 45, 39, 0.5);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(5px);
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            color: white;
+        }
+
+        .contact-header {
+            text-align: center;
+			margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .contact-header h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contact-header p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info-section {
+            padding-right: 40px;
+        }
+
+        .contact-info-section h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .contact-info-section p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(229, 45, 39, 0.2);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-text h4 {
+            font-size: 16px;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .contact-text p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .social-links {
+            margin-top: 40px;
+        }
+
+        .social-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-btn {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(229, 45, 39, 0.4);
+        }
+
+        .social-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .contact-form-section {
+            padding-left: 40px;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #e52d27;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+            line-height: 1.5;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(229, 45, 39, 0.5);
+        }
+
+        /* Smooth image loading */
+        .image-loading {
+            background: linear-gradient(45deg, #333, #555);
+            position: relative;
+        }
+
+        .image-loading::after {
+            content: '🎵';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            opacity: 0.5;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: rgba(0, 0, 0, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        .footer-copyright a {
+            color: #e52d27;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-copyright a:hover {
+            color: #b31217;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e52d27 0%, #b31217 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(229, 45, 39, 0.5);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .about-main {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .about-visual {
+                height: 400px;
+            }
+
+            .about-info {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .feature-list {
+                text-align: left;
+                max-width: 500px;
+                margin: 0 auto 40px;
+            }
+
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                padding: 40px;
+            }
+
+            /* Contact section responsive */
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .contact-info-section {
+                padding-right: 0;
+            }
+
+            .contact-form-section {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 0 20px;
+            }
+
+            .main-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .main-menu.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .coverflow-item {
+                width: 200px;
+                height: 200px;
+            }
+
+            .nav-button {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .nav-button.prev {
+                left: 20px;
+            }
+
+            .nav-button.next {
+                right: 20px;
+            }
+
+            .info h2 {
+                font-size: 24px;
+            }
+
+            .info p {
+                font-size: 14px;
+            }
+
+            .logo-text {
+                font-size: 20px;
+            }
+
+            .about-header h2 {
+                font-size: 36px;
+            }
+
+            .about-info h3 {
+                font-size: 28px;
+            }
+
+            .about-visual {
+                height: 400px;
+            }
+
+            .showcase-display {
+                max-width: 350px;
+                height: 400px;
+            }
+
+            .showcase-main {
+                width: 100%;
+                height: 350px;
+                padding: 30px;
+            }
+
+            .showcase-logo {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+
+            .showcase-title {
+                font-size: 28px;
+            }
+
+            .showcase-subtitle {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .corner-decoration {
+                display: none;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .contact-content h2 {
+                font-size: 36px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .footer-links {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                height: 70px;
+                padding: 0 15px;
+            }
+
+            .header.scrolled {
+                height: 60px;
+            }
+
+            .logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .logo-text {
+                font-size: 18px;
+            }
+
+            .coverflow-item {
+                width: 180px;
+                height: 180px;
+            }
+
+            .about-content,
+            .contact-content {
+                padding: 20px;
+            }
+
+            /* Additional contact section mobile optimization for small screens */
+            .contact-container {
+                gap: 30px;
+            }
+
+            .contact-header {
+                margin-bottom: 40px;
+            }
+
+            .contact-header h2 {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            .contact-header p {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+
+            .contact-info-section {
+                margin-bottom: 20px;
+            }
+
+            .contact-info-section h3 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .contact-info-section > p {
+                font-size: 14px;
+                padding: 0 10px;
+                margin-bottom: 30px;
+            }
+
+            .contact-details {
+                gap: 15px;
+            }
+
+            .contact-item {
+                padding: 15px;
+                gap: 12px;
+            }
+
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .contact-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .contact-text h4 {
+                font-size: 14px;
+            }
+
+            .contact-text p {
+                font-size: 12px;
+                word-break: break-word;
+            }
+
+            .social-links {
+                margin-top: 30px;
+            }
+
+            .social-links h4 {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+
+            .social-buttons {
+                gap: 10px;
+            }
+
+            .social-btn {
+                width: 40px;
+                height: 40px;
+            }
+
+            .social-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .contact-form {
+                padding: 20px 15px;
+                border-radius: 15px;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            .form-group label {
+                font-size: 14px;
+                margin-bottom: 8px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 12px;
+                font-size: 14px;
+                border-radius: 8px;
+            }
+
+            .form-group textarea {
+                min-height: 120px;
+            }
+
+            .submit-btn {
+                padding: 12px 30px;
+                font-size: 16px;
+                border-radius: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <a href="#home" class="logo-container">
+            <div class="logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e52d27;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#b31217;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="10" y="25" width="15" height="50" fill="url(#grad1)" transform="rotate(-15 17.5 50)" />
+                    <rect x="35" y="15" width="15" height="70" fill="url(#grad1)" />
+                    <rect x="60" y="25" width="15" height="50" fill="url(#grad1)" transform="rotate(15 67.5 50)" />
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad1)" stroke-width="2" opacity="0.5" />
+                </svg>
+            </div>
+            <div class="logo-text">Luciano 4E</div>
+        </a>
+        
+        <nav class="main-menu" id="mainMenu">
+            <a href="#home" class="menu-item active">Home</a>
+            <a href="#about" classr="menu-item">About</a>
+            <a href="#contact" class="menu-item">Bookings</a>
+            <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" class="menu-item external">Spotify</a>
+        </nav>
+        
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section id="home" class="section">
+        <div class="coverflow-wrapper">
+            <div class="info">
+                <h2 id="current-title">The 4E Tapes</h2>
+                <p id="current-description">Latest official mixtape drop.</p>
+            </div>
+
+            <div class="coverflow-container" tabindex="0">
+                <div class="coverflow" id="coverflow">
+                    <div class="coverflow-item" data-index="0">
+                        <div class="cover image-loading">
+                            <img src="images/the-4e-tapes.jpg" alt="The 4E Tapes Album Cover" loading="lazy">
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+                    <div class="coverflow-item" data-index="1">
+                        <div class="cover image-loading">
+                            <img src="images/redlight-single.jpg" alt="Redlight Single Art" loading="lazy">
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+                    <div class="coverflow-item" data-index="2">
+                        <div class="cover image-loading">
+                            <img src="images/studio-session.jpg" alt="Studio Session" loading="lazy">
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+                    <div class="coverflow-item" data-index="3">
+                        <div class="cover image-loading">
+                            <img src="images/on-the-road.jpg" alt="On The Road Tour" loading="lazy">
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+                    <div class="coverflow-item" data-index="4">
+                        <div class="cover image-loading">
+                            <img src="images/genesis-ep.jpg" alt="Genesis EP Cover" loading="lazy">
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+                    <div class="coverflow-item" data-index="5">
+                        <div class="cover image-loading">
+                            <img src="images/features.jpg" alt="Features" loading="lazy">
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+                    <div class="coverflow-item" data-index="6">
+                        <div class="cover image-loading">
+                            <img src="images/city-nights.jpg" alt="City Nights Music Video" loading="lazy">
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+                </div>
+
+                <button class="nav-button prev" onclick="navigate(-1)">‹</button>
+                <button class="nav-button next" onclick="navigate(1)">›</button>
+
+                <div class="dots-container" id="dots"></div>
+                
+                <button class="play-pause-button" id="playPauseBtn" onclick="toggleAutoplay()">
+                    <span class="play-icon">▶</span>
+                    <span class="pause-icon" style="display: none;">❚❚</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="about-content">
+            <div class="about-header">
+                <h2>About Luciano 4E</h2>
+                <p>The voice of the streets. Discover the artist behind the music.</p>
+            </div>
+            
+            <div class="about-main">
+                <div class="about-visual">
+                    <div class="showcase-display">
+                        <div class="showcase-main">
+                            <div class="corner-decoration top-left"></div>
+                            <div class="corner-decoration bottom-right"></div>
+                            
+                            <div class="showcase-logo">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="10" y="25" width="15" height="50" fill="white" transform="rotate(-15 17.5 50)" opacity="0.9" />
+                                    <rect x="35" y="15" width="15" height="70" fill="white" />
+                                    <rect x="60" y="25" width="15" height="50" fill="white" transform="rotate(15 67.5 50)" opacity="0.9" />
+                                    <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="2" opacity="0.3" />
+                                </svg>
+                            </div>
+                            
+                            <h3 class="showcase-title">Luciano 4E</h3>
+                            <p class="showcase-subtitle">Official Website & Music Hub</p>
+                            
+                            <div class="showcase-badges">
+                                <a href="#" class="badge">Hip-Hop</a>
+                                <a href="#" class="badge">Rap</a>
+                                <a href="#" class="badge">UK Drill</a>
+                                <a href="#" class="badge">Artist</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-info">
+                    <h3>From The Streets To The Studio</h3>
+                    <p>Luciano 4E brings a raw, authentic energy to the music scene. From groundbreaking EPs to viral singles, his journey is one of passion, grit, and lyrical prowess.</p>
+                    <p>This is the official hub to explore his discography, watch the latest videos, and get updates on upcoming shows and exclusive merch drops.</p>
+                    
+                    <ul class="feature-list">
+                        <li>Latest Album: The 4E Tapes</li>
+                        <li>Exclusive Music Videos</li>
+                        <li>Official Tour Dates & Tickets</li>
+                        <li>Behind-the-Scenes Content</li>
+                        <li>Merch Store Access</li>
+                    </ul>
+                    
+                    <a href="#contact" class="cta-button">
+                        Book A Feature
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <div class="stat-item">
+                    <div class="stat-number">10M+</div>
+                    <div class="stat-label">Streams</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Followers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Albums</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1</div>
+                    <div class="stat-label">Artist</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="contact-content">
+            <div class="contact-header">
+                <h2>Contact & Bookings</h2>
+                <p>For features, press, or booking inquiries, get in touch with the team.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info-section">
+                    <h3>Get In Touch</h3>
+                    <p>We're here to help bring your vision to life. Use the form for all professional inquiries, or connect via email for a faster response.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>bookings@luciano4e.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Press</h4>
+                                <p>press@luciano4e.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Management</h4>
+                                <p>4E Records, London, UK</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Studio Hours</h4>
+                                <p>24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-buttons">
+                            <a href="#" class="social-btn" title="Facebook">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="Twitter">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="LinkedIn">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-btn" title="Instagram">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject (Booking, Press, etc.)</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-copyright">
+                © 2025 Luciano 4E. All rights reserved. | Site by <a href="https://templatemo.com" target="_blank" rel="noopener noreferrer">TemplateMo</a> / Reworked
+            </div>
+            <div class="footer-links">
+                <a href="#privacy" onclick="event.preventDefault(); alert('Privacy Policy page would go here');">Privacy Policy</a>
+                <a href="#terms" onclick="event.preventDefault(); alert('Terms of Service page would go here');">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-to-top" id="scrollToTop">
+        <span>↑</span>
+    </div>
+
+<script>
+    // JavaScript Document
+
+        // Coverflow functionality
+        const items = document.querySelectorAll('.coverflow-item');
+        const dotsContainer = document.getElementById('dots');
+        const currentTitle = document.getElementById('current-title');
+        const currentDescription = document.getElementById('current-description');
+        const container = document.querySelector('.coverflow-container');
+        const menuToggle = document.getElementById('menuToggle');
+        const mainMenu = document.getElementById('mainMenu');
+        let currentIndex = 3;
+        let isAnimating = false;
+
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on menu items (except external links)
+        document.querySelectorAll('.menu-item:not(.external)').forEach(item => {
+            item.addEventListener('click', (e) => {
+                menuToggle.classList.remove('active');
+                mainMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !mainMenu.contains(e.target)) {
+                menuToggle.classList.remove('active');
+                mainMenu.classList.remove('active');
+            }
+        });
+
+        // Image data with titles and descriptions
+        const imageData = [
+            {
+                title: "The 4E Tapes",
+                description: "Latest official mixtape drop."
+            },
+            {
+                title: "Redlight",
+                description: "Chart-topping single."
+            },
+            {
+                title: "Studio Sessions",
+                description: "Behind the scenes in the booth."
+            },
+            {
+                title: "On The Road",
+                description: "Highlights from the 2024 Tour."
+            },
+            {
+                title: "Genesis EP",
+                description: "The debut project."
+            },
+            {
+                title: "Features",
+                description: "Collabs with the industry's finest."
+            },
+            {
+                title: "City Nights",
+                description: "Music video still."
+            }
+        ];
+
+        // Create dots
+        items.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.onclick = () => goToIndex(index);
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll('.dot');
+        let autoplayInterval = null;
+        let isPlaying = true;
+        const playIcon = document.querySelector('.play-icon');
+        const pauseIcon = document.querySelector('.pause-icon');
+
+        function updateCoverflow() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            items.forEach((item, index) => {
+                let offset = index - currentIndex;
+                
+                if (offset > items.length / 2) {
+                    offset = offset - items.length;
+                }
+                else if (offset < -items.length / 2) {
+                    offset = offset + items.length;
+                }
+                
+                const absOffset = Math.abs(offset);
+                const sign = Math.sign(offset);
+                
+                let translateX = offset * 220;
+                let translateZ = -absOffset * 200;
+                let rotateY = -sign * Math.min(absOffset * 60, 60);
+                let opacity = 1 - (absOffset * 0.2);
+                let scale = 1 - (absOffset * 0.1);
+
+                if (absOffset > 3) {
+                    opacity = 0;
+
+                    translateX = sign * 800;
+                }
+
+                item.style.transform = `
+                    translateX(${translateX}px) 
+                    translateZ(${translateZ}px) 
+                    rotateY(${rotateY}deg)
+                    scale(${scale})
+                `;
+                item.style.opacity = opacity;
+                item.style.zIndex = 100 - absOffset;
+
+                item.classList.toggle('active', index === currentIndex);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+
+            const currentData = imageData[currentIndex];
+            currentTitle.textContent = currentData.title;
+            currentDescription.textContent = currentData.description;
+            
+            currentTitle.style.animation = 'none';
+            currentDescription.style.animation = 'none';
+            setTimeout(() => {
+                currentTitle.style.animation = 'fadeIn 0.6s forwards';
+                currentDescription.style.animation = 'fadeIn 0.6s forwards';
+            }, 10);
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 600);
+        }
+
+        function navigate(direction) {
+            if (isAnimating) return;
+            
+            currentIndex = currentIndex + direction;
+            
+            if (currentIndex < 0) {
+                currentIndex = items.length - 1;
+            } else if (currentIndex >= items.length) {
+                currentIndex = 0;
+            }
+            
+            updateCoverflow();
+        }
+
+        function goToIndex(index) {
+            if (isAnimating || index === currentIndex) return;
+            currentIndex = index;
+            updateCoverflow();
+        }
+
+        // Keyboard navigation
+        container.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') navigate(-1);
+            if (e.key === 'ArrowRight') navigate(1);
+        });
+
+        // Click on items to select
+        items.forEach((item, index) => {
+            item.addEventListener('click', () => goToIndex(index));
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+        let isSwiping = false;
+
+        container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+            isSwiping = true;
+        }, { passive: true });
+
+        container.addEventListener('touchmove', (e) => {
+            if (!isSwiping) return;
+            
+            const currentX = e.changedTouches[0].screenX;
+            const diff = currentX - touchStartX;
+            
+            if (Math.abs(diff) > 10) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        container.addEventListener('touchend', (e) => {
+            if (!isSwiping) return;
+            
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+            isSwiping = false;
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 30;
+            const diffX = touchStartX - touchEndX;
+            const diffY = touchStartY - touchEndY;
+            
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+                handleUserInteraction();
+                
+                if (diffX > 0) {
+                    navigate(1);
+                } else {
+                    navigate(-1);
+                }
+            }
+        }
+
+        // Initialize images and reflections
+        items.forEach((item, index) => {
+            const img = item.querySelector('img');
+            const reflection = item.querySelector('.reflection');
+            
+            img.onload = function() {
+
+                this.parentElement.classList.remove('image-loading');
+                reflection.style.setProperty('--bg-image', `url(${this.src})`);
+                reflection.style.backgroundImage = `url(${this.src})`;
+                reflection.style.backgroundSize = 'cover';
+                reflection.style.backgroundPosition = 'center';
+            };
+            
+            img.onerror = function() {
+                this.parentElement.classList.add('image-loading');
+            };
+        });
+
+        // Autoplay functionality
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCoverflow();
+            }, 4000);
+            isPlaying = true;
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+        }
+
+        function stopAutoplay() {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
+            }
+            isPlaying = false;
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+        }
+
+        function toggleAutoplay() {
+            if (isPlaying) {
+                stopAutoplay();
+            } else {
+                startAutoplay();
+            }
+        }
+
+        function handleUserInteraction() {
+            stopAutoplay();
+        }
+
+        // Add event listeners to stop autoplay on manual navigation
+        items.forEach((item) => {
+            item.addEventListener('click', handleUserInteraction);
+        });
+
+        document.querySelector('.nav-button.prev').addEventListener('click', handleUserInteraction);
+        document.querySelector('.nav-button.next').addEventListener('click', handleUserInteraction);
+        
+        dots.forEach((dot) => {
+            dot.addEventListener('click', handleUserInteraction);
+        });
+
+        container.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                handleUserInteraction();
+            }
+        });
+
+        // Smooth scrolling and active menu item
+        const sections = document.querySelectorAll('.section');
+        const menuItems = document.querySelectorAll('.menu-item');
+        const header = document.getElementById('header');
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Update active menu item on scroll
+        function updateActiveMenuItem() {
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    menuItems.forEach(item => {
+                        if (!item.classList.contains('external')) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    if (menuItems[index] && !menuItems[index].classList.contains('external')) {
+                        menuItems[index].classList.add('active');
+                    }
+                }
+            });
+
+            // Header background on scroll
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // Show/hide scroll to top button
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', updateActiveMenuItem);
+
+        // Smooth scroll to section
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                const targetId = item.getAttribute('href');
+                
+                // Check if it's an internal link (starts with #)
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+                // External links will open normally in new tab
+            });
+        });
+
+        // Logo click to scroll to top
+        document.querySelector('.logo-container').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Scroll to top button
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for your message! The team will get back to you soon.');
+            event.target.reset();
+        }
+
+        // Initialize
+        updateCoverflow();
+        container.focus();
+        startAutoplay();
+</script>
+
+</body>
+</html>
