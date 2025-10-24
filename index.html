@@ -1345,6 +1345,54 @@
 <body>
 
 
+<header class="header bg-black text-white flex justify-between items-center px-6 py-3" id="header">
+    <a href="#home" class="logo-container flex items-center space-x-3">
+        <!-- Image Logo -->
+        <img src="https://imgur.com/XF2EFfm.png" 
+             alt="Luciano 4E Logo" 
+             class="logo-image object-contain" 
+             style="max-height: 38px; width: auto;">
+
+        <!-- Text Logo -->
+        <span class="logo-text font-bold text-xl tracking-wide text-red-600">Luciano 4E</span>
+    </a>
+
+    <!-- NAV MENU -->
+    <nav class="main-menu hidden md:flex space-x-6 text-base" id="mainMenu">
+        <a href="#home" class="menu-item active border-b-2 border-red-600">Home</a>
+        <a href="#about" class="menu-item">About</a>
+        <a href="#contact" class="menu-item">Contact</a>
+        <a href="https://youtube.com/@Luciano4E" target="_blank" rel="noopener noreferrer" class="menu-item external">Videos</a>
+    </nav>
+
+    <!-- MENU TOGGLE (visible on mobile) -->
+    <div class="menu-toggle flex flex-col space-y-1 cursor-pointer md:hidden" id="menuToggle">
+        <span class="block w-6 h-0.5 bg-white"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+        <span class="block w-6 h-0.5 bg-white"></span>
+    </div>
+</header>
+
+<!-- MOBILE MENU (slides down) -->
+<nav id="mobileMenu" class="hidden flex flex-col bg-black text-white text-center space-y-4 py-4 border-t border-gray-800 md:hidden">
+    <a href="#home" class="menu-item active text-red-600">Home</a>
+    <a href="#about" class="menu-item">About</a>
+    <a href="#contact" class="menu-item">Contact</a>
+    <a href="https://youtube.com/@Luciano4E" target="_blank" rel="noopener noreferrer" class="menu-item external">Videos</a>
+</nav>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  });
+</script>
+
+
+
 
 
 
