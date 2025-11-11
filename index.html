@@ -1,35 +1,143 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"> 
-    
-    <title>Luciano 4E | Cuban Trap Latino & Hip-Hop Artist Official Website</title>
-    
-    <meta name="description" content="Official website of Luciano 4E, the Cuban Trap Latino and Hip-Hop sensation. Stream music, watch videos, book performances, and shop exclusive merchandise from the voice of the streets.">
-    
-    <meta name="keywords" content="Luciano 4E, Luciano4E, luciano4E, luciano 4e, Luciano, Latin music artist, Cuban Trap, Latin Trap, Reggaeton, Latin Rap, Latin Hip Hop, Cuban Hip Hop, Spanish Trap, 4E Tapes, Luciano 4E music, Luciano 4E songs, Luciano 4E artist, Luciano 4E official, Luciano 4E videos, Luciano 4E streaming, Luciano 4E concerts, Luciano 4E merch, Latin artist, Latin music videos, Latin urban music, new Latin artist, Latin flow, Latin trap star, Latin music streaming, Latin hip hop artist">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Luciano 4E | Cuban Trap Latino & Hip-Hop Artist Official Website</title>
 
-      <!-- Favicon / Website Logo -->
+<meta name="description" content="Official website of Luciano 4E, the Cuban Trap Latino and Hip-Hop sensation. Stream music, watch videos, book performances, and shop exclusive merchandise from the voice of the streets.">
+<meta name="keywords" content="Luciano 4E, Latin Trap, Cuban Trap, Hip Hop, Reggaeton, Latin Rap, Music, Videos, Merch">
+
 <link rel="icon" href="https://imgur.com/t1yjT7W.png" type="image/png">
-<link rel="apple-touch-icon" href="https://imgur.com/t1yjT7W.png">
-<meta name="theme-color" content="#ffffff">
-    
-    <link rel="canonical" href="https://www.luciano4e.com/">
 
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="Luciano 4E | Cuban Trap Latino & Hip-Hop Artist Official Website">
-    <meta property="og:description" content="Official website of Luciano 4E. Stream music, watch videos, book performances, and get exclusive merch from the voice of the streets.">
-    <meta property="og:url" content="https://www.luciano4e.com/">
-    <meta property="og:type" content="music.group">
-    <meta property="og:image" content="https://imgur.com/t1yjT7W.png">
+<style>
+/* Reset & Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #000; color: white; overflow-x: hidden; }
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Luciano 4E | Cuban Trap Latino & Hip-Hop Artist">
-    <meta name="twitter:description" content="Official website of Luciano 4E. Stream music, watch videos, book performances, and shop exclusive merch.">
-    <meta name="twitter:image" content="https://imgur.com/t1yjT7W.png">
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+.logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-image { max-height: 38px; width: auto; }
+.logo-text { font-size: 1.25rem; font-weight: bold; color: #e52d27; }
+
+/* Desktop Menu */
+.main-menu { display: flex; gap: 24px; }
+.menu-item { text-decoration: none; color: rgba(255,255,255,0.8); padding-bottom: 2px; transition: 0.3s; }
+.menu-item:hover { color: white; }
+.menu-item.active { color: #e52d27; border-bottom: 2px solid #e52d27; }
+.menu-item.external::before { content: "↗ "; font-size: 0.75rem; opacity: 0.7; }
+
+/* Mobile Menu Toggle */
+.menu-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; z-index: 1001; }
+.menu-toggle span { width: 25px; height: 3px; background: white; border-radius: 2px; transition: all 0.3s ease; }
+
+/* Animate hamburger to X */
+.menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Mobile Menu */
+#mobileMenu {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease-in-out;
+  z-index: 999;
+}
+#mobileMenu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+}
+#mobileMenu a.active { color: #e52d27; }
+
+/* Toggle Open */
+#mobileMenu.open { max-height: 500px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-menu { display: none; }
+  .menu-toggle { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <a href="#home" class="logo-container">
+    <img src="https://imgur.com/XF2EFfm.png" alt="Luciano 4E Logo" class="logo-image">
+    <span class="logo-text">Luciano 4E</span>
+  </a>
+
+  <nav class="main-menu" id="mainMenu">
+    <a href="#home" class="menu-item active">Home</a>
+    <a href="#about" class="menu-item">About</a>
+    <a href="#contact" class="menu-item">Contact</a>
+    <a href="https://youtube.com/@Luciano4E" target="_blank" class="menu-item external">Videos</a>
+  </nav>
+
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<nav id="mobileMenu">
+  <a href="#home" class="menu-item active">Home</a>
+  <a href="#about" class="menu-item">About</a>
+  <a href="#contact" class="menu-item">Contact</a>
+  <a href="https://youtube.com/@Luciano4E" target="_blank" class="menu-item external">Videos</a>
+</nav>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+
+// Toggle mobile menu
+menuToggle.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  menuToggle.classList.toggle('active');
+});
+
+// Close menu when clicking a link
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuToggle.classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>
+
 
     <!-- JSON-LD Schema for SEO -->
     <script type="application/ld+json">
@@ -1344,53 +1452,6 @@
     </style>
 </head>
 <body>
-
-
-<header class="header bg-black text-white flex justify-between items-center px-6 py-3" id="header">
-    <a href="#home" class="logo-container flex items-center space-x-3">
-        <!-- Image Logo -->
-        <img src="https://imgur.com/XF2EFfm.png" 
-             alt="Luciano 4E Logo" 
-             class="logo-image object-contain" 
-             style="max-height: 38px; width: auto;">
-
-        <!-- Text Logo -->
-        <span class="logo-text font-bold text-xl tracking-wide text-red-600">Luciano 4E</span>
-    </a>
-
-    <!-- NAV MENU -->
-    <nav class="main-menu hidden md:flex space-x-6 text-base" id="mainMenu">
-        <a href="#home" class="menu-item active border-b-2 border-red-600">Home</a>
-        <a href="#about" class="menu-item">About</a>
-        <a href="#contact" class="menu-item">Contact</a>
-        <a href="https://youtube.com/@Luciano4E" target="_blank" rel="noopener noreferrer" class="menu-item external">Videos</a>
-    </nav>
-
-    <!-- MENU TOGGLE (visible on mobile) -->
-    <div class="menu-toggle flex flex-col space-y-1 cursor-pointer md:hidden" id="menuToggle">
-        <span class="block w-6 h-0.5 bg-white"></span>
-        <span class="block w-6 h-0.5 bg-white"></span>
-        <span class="block w-6 h-0.5 bg-white"></span>
-    </div>
-</header>
-
-<!-- MOBILE MENU (slides down) -->
-<nav id="mobileMenu" class="hidden flex flex-col bg-black text-white text-center space-y-4 py-4 border-t border-gray-800 md:hidden">
-    <a href="#home" class="menu-item active text-red-600">Home</a>
-    <a href="#about" class="menu-item">About</a>
-    <a href="#contact" class="menu-item">Contact</a>
-    <a href="https://youtube.com/@Luciano4E" target="_blank" rel="noopener noreferrer" class="menu-item external">Videos</a>
-</nav>
-
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('flex');
-  });
-</script>
 
 
 
