@@ -287,8 +287,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Top close and menu simulated buttons
   closeBarBtn.addEventListener('click', () => {
-    alert("Luciano4E • Portal Oficial de Artista • ¡Toca '...' o Compartir para copiar el enlace!");
+    window.location.href = '/?view=web';
   });
+
+  const browserUrlGroup = document.querySelector('.browser-url-group');
+  if (browserUrlGroup) {
+    browserUrlGroup.style.cursor = 'pointer';
+    browserUrlGroup.title = 'Ir al sitio web completo oficial';
+    browserUrlGroup.addEventListener('click', () => {
+      window.location.href = '/?view=web';
+    });
+  }
 
   openMenuBtn.addEventListener('click', () => {
     openShareModal();

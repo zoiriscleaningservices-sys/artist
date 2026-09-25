@@ -4,6 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Smart Bio & Social Routing (Preserves Full Website for Google & Desktop, Routes TikTok/Bio Clicks to Links App) -->
+<script>
+  (function() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      // Explicit override: ?view=web forces the full official website
+      if (params.get('view') === 'web' || params.get('site') === 'true') {
+        return;
+      }
+      // Explicit override: ?view=links forces the links portal
+      if (params.get('view') === 'links') {
+        window.location.replace('links/' + window.location.search);
+        return;
+      }
+
+      var ref = document.referrer ? document.referrer.toLowerCase() : '';
+      // If coming from Google search or other search engines, KEEP full official website!
+      var isSearch = /google\.|bing\.|yahoo\.|duckduckgo\.|ecosia\.|baidu\.|yandex\./i.test(ref);
+      if (isSearch) {
+        return;
+      }
+
+      var ua = navigator.userAgent || '';
+      // If search engine bot/crawler, KEEP full official website for complete SEO indexing!
+      var isBot = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|sogou|exabot|ia_archiver/i.test(ua);
+      if (isBot) {
+        return;
+      }
+
+      // If opened from TikTok, Instagram, Twitter/X, Facebook, or other social in-app browsers
+      var isSocial = /musical_ly|bytedance|tiktok|instagram|fban|fbav|twitter|snapchat/i.test(ua) ||
+                     /tiktok|bytedance|instagram|facebook|t\.co/i.test(ref);
+      if (isSocial) {
+        window.location.replace('links/' + window.location.search);
+        return;
+      }
+
+      // Direct mobile visit (e.g. clicking LUCIANO4E.COM in mobile bio or typing on phone)
+      var isMobile = /iphone|ipad|ipod|android/i.test(ua) && window.innerWidth <= 768;
+      if (isMobile && !ref) {
+        window.location.replace('links/' + window.location.search);
+        return;
+      }
+    } catch (e) {}
+  })();
+</script>
+
 <title>Luciano 4E | Cuban Trap Latino & Hip-Hop Artist Official Website</title>
 
 <meta name="description" content="Official website of Luciano 4E, the Cuban Trap Latino and Hip-Hop sensation. Stream music, watch videos, book performances, and shop exclusive merchandise from the voice of the streets.">
