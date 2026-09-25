@@ -1599,35 +1599,6 @@ select,
   pointer-events: none;
 }
 
-.footer-website-link {
-  margin: 14px 0 10px;
-  display: flex;
-  justify-content: center;
-}
-
-.footer-web-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #cbd5e1;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  transition: all 0.25s ease;
-  backdrop-filter: blur(10px);
-}
-
-.footer-web-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.35);
-  transform: translateY(-2px);
-}
-
 .footer-rights {
   font-size: 0.75rem;
   color: var(--text-muted);

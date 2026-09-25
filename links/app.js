@@ -285,17 +285,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Top close and menu simulated buttons
+  // Top close and menu simulated buttons (Always stay smoothly on this page!)
   closeBarBtn.addEventListener('click', () => {
-    window.location.href = '/?view=web';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   const browserUrlGroup = document.querySelector('.browser-url-group');
   if (browserUrlGroup) {
-    browserUrlGroup.style.cursor = 'pointer';
-    browserUrlGroup.title = 'Ir al sitio web completo oficial';
+    browserUrlGroup.style.cursor = 'default';
+    browserUrlGroup.title = 'Luciano4E Oficial';
     browserUrlGroup.addEventListener('click', () => {
-      window.location.href = '/?view=web';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 
