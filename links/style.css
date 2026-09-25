@@ -76,6 +76,8 @@ body {
   overflow: hidden;
   contain: strict;
   transform: translateZ(0);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 22%, rgba(0, 0, 0, 0.4) 38%, #000000 55%);
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 22%, rgba(0, 0, 0, 0.4) 38%, #000000 55%);
 }
 
 .glow-orb {
@@ -90,17 +92,17 @@ body {
 .glow-orb.orb-1 {
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(0, 149, 246, 0.45) 0%, rgba(99, 102, 241, 0.22) 45%, transparent 70%);
-  top: -50px;
-  left: -120px;
+  background: radial-gradient(circle, rgba(0, 149, 246, 0.35) 0%, rgba(99, 102, 241, 0.18) 45%, transparent 70%);
+  top: 16%;
+  left: -140px;
   animation: floatOrb1 18s ease-in-out infinite alternate;
 }
 
 .glow-orb.orb-2 {
   width: 580px;
   height: 580px;
-  background: radial-gradient(circle, rgba(217, 70, 239, 0.38) 0%, rgba(139, 92, 246, 0.2) 48%, transparent 72%);
-  top: 40%;
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.32) 0%, rgba(139, 92, 246, 0.16) 48%, transparent 72%);
+  top: 42%;
   right: -140px;
   animation: floatOrb2 22s ease-in-out infinite alternate;
 }
@@ -108,7 +110,7 @@ body {
 .glow-orb.orb-3 {
   width: 480px;
   height: 480px;
-  background: radial-gradient(circle, rgba(0, 245, 255, 0.35) 0%, rgba(0, 119, 230, 0.18) 48%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.3) 0%, rgba(0, 119, 230, 0.14) 48%, transparent 70%);
   bottom: 5%;
   left: 15%;
   animation: floatOrb3 16s ease-in-out infinite alternate;
@@ -334,9 +336,11 @@ body {
   width: 100%;
   position: relative;
   overflow: hidden;
-  max-height: 520px;
+  max-height: 540px;
   display: flex;
   justify-content: center;
+  -webkit-mask-image: linear-gradient(to bottom, #000000 0%, #000000 65%, rgba(0, 0, 0, 0.6) 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000000 0%, #000000 65%, rgba(0, 0, 0, 0.6) 82%, transparent 100%);
 }
 
 .hero-img {
@@ -353,10 +357,10 @@ body {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.05) 0%,
     rgba(0, 0, 0, 0) 30%,
-    rgba(0, 0, 0, 0.4) 65%,
-    rgba(0, 0, 0, 0.88) 85%,
+    rgba(0, 0, 0, 0.35) 60%,
+    rgba(0, 0, 0, 0.8) 82%,
     #000000 100%
   );
   pointer-events: none;
@@ -365,7 +369,7 @@ body {
 .hero-info {
   position: relative;
   z-index: 10;
-  margin-top: -46px;
+  margin-top: -52px;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
@@ -2808,12 +2812,12 @@ button:active,
   }
 
   .hero-image-wrap {
-    max-height: clamp(340px, 80vw, 480px);
+    max-height: clamp(380px, 92vw, 500px);
     width: 100%;
   }
 
   .hero-info {
-    margin-top: clamp(-46px, -10vw, -32px);
+    margin-top: clamp(-52px, -12vw, -38px);
     padding: 0 16px;
     width: 100%;
   }
