@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <title>Luciano4E | Artista Oficial • Música Urbana, Sencillos y Enlaces</title>
+  
+  <!-- Official Artist Favicons & App Icons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  
+  <!-- SEO & Social Open Graph Meta Tags (Optimizado para Promoción del Artista) -->
+  <meta name="description" content="Portal oficial de Luciano4E. Escucha 'Préndete', 'MAMI', '24/7' y todos los éxitos urbanos en Spotify, Apple Music, YouTube y Audiomack. Enlaces y contenido exclusivo.">
+  <meta name="keywords" content="Luciano4E, Luciano 4E, Préndete, MAMI, 24/7, Reggaeton, Trap Latino, Música Urbana, Artista Urbano, Spotify, Apple Music, YouTube">
+  <meta name="author" content="Luciano4E">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="music.musician">
+  <meta property="og:url" content="https://www.luciano4e.com">
+  <meta property="og:title" content="Luciano4E | Artista Oficial • Música y Enlaces Oficiales">
+  <meta property="og:description" content="Escucha 'Préndete' y los mejores sencillos de Luciano4E en todas las plataformas de streaming. Sigue sus redes oficiales.">
+  <meta property="og:image" content="assets/img/hero.jpg">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:site_name" content="Luciano4E Oficial">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Luciano4E | Artista Oficial">
+  <meta name="twitter:description" content="Portal oficial de música de Luciano4E. 'Préndete' ya disponible en todas las plataformas.">
+  <meta name="twitter:image" content="assets/img/hero.jpg">
+
+  <meta name="theme-color" content="#07070a">
+
+  <!-- JSON-LD Structured Data Schema for Music Artist SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Luciano4E",
+    "alternateName": ["Luciano 4E", "Luciano4E Oficial"],
+    "url": "https://www.luciano4e.com",
+    "image": "https://www.luciano4e.com/assets/img/hero.jpg",
+    "description": "Luciano4E es un artista urbano latino, compositor y cantante. Escucha sus sencillos 'Préndete', 'MAMI', '24/7', 'Tu Chulo' y más.",
+    "genre": ["Reggaeton", "Latin Trap", "Música Urbana Latina"],
+    "sameAs": [
+      "https://open.spotify.com/artist/0OtaZUWi1z5G9pcURboTB2",
+      "https://music.apple.com/us/artist/luciano4e/1672722974",
+      "https://www.youtube.com/@Luciano4E",
+      "https://music.youtube.com/channel/UCXX0IW6etYz_-d8jcU9mmLQ",
+      "https://www.instagram.com/luciano4e/",
+      "https://www.tiktok.com/@luciano.4e",
+      "https://audiomack.com/luciano4e/song/247-1",
+      "https://www.amazon.com/music/player/artists/B09ZTDJVNP/luciano4e",
+      "https://music.amazon.de/artists/B09ZT7483L/luciano4e",
+      "https://www.iheart.com/artist/luciano4e-39751506/?autoplay=true"
+    ],
+    "track": [
+      {
+        "@type": "MusicRecording",
+        "name": "Préndete",
+        "byArtist": "Luciano4E",
+        "url": "https://open.spotify.com/album/2PEe1vLbdwAKeKYQDlLIpm"
+      },
+      {
+        "@type": "MusicRecording",
+        "name": "MAMI",
+        "byArtist": "Luciano4E",
+        "url": "https://music.amazon.de/artists/B09ZT7483L/luciano4e"
+      },
+      {
+        "@type": "MusicRecording",
+        "name": "24/7",
+        "byArtist": "Luciano4E",
+        "url": "https://audiomack.com/luciano4e/song/247-1"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+  <!-- Main Mobile-Framed Page Container -->
+  <main class="page-container" id="app-container">
+    
+    <!-- Sticky Glass Header (Reveals on scroll) -->
+    <header class="sticky-nav" id="stickyNav">
+      <div class="sticky-left">
+        <img src="assets/img/profile_circle.jpg" alt="Luciano4E avatar" class="sticky-avatar">
+        <div class="sticky-meta">
+          <div class="sticky-name-row">
+            <span class="sticky-name">Luciano4E</span>
+            <svg class="official-verified-badge mini" viewBox="0 0 24 24" width="14" height="14" aria-label="Verificado">
+              <path fill="#0095F6" d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.79-4-4-4-.495 0-.965.084-1.4.238C14.55 2.475 13.18 1.6 11.6 1.6s-2.95.875-3.6 2.148c-.435-.154-.905-.238-1.4-.238-2.21 0-4 1.79-4 4 0 .495.084.965.238 1.4C1.575 9.55.7 10.92.7 12.5s.875 2.95 2.148 3.6c-.154.435-.238.905-.238 1.4 0 2.21 1.79 4 4 4 .495 0 .965-.084 1.4-.238.65 1.273 2.02 2.148 3.6 2.148s2.95-.875 3.6-2.148c.435.154.905.238 1.4.238 2.21 0 4-1.79 4-4 0-.495-.084-.965-.238-1.4 1.273-.65 2.148-2.02 2.148-3.6z"/>
+              <path fill="#ffffff" d="M10.2 16.2l-3.5-3.5 1.4-1.4 2.1 2.1 5.3-5.3 1.4 1.4-6.7 6.7z"/>
+            </svg>
+          </div>
+          <span class="sticky-sub">Artista Musical</span>
+        </div>
+      </div>
+      <div class="sticky-actions">
+        <button class="icon-btn-round" id="stickyPlayBtn" title="Reproducir adelanto de canción" aria-label="Reproducir adelanto de canción">
+          <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="pause-icon hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <button class="icon-btn-round" id="stickyShareBtn" title="Compartir perfil" aria-label="Compartir perfil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Simulated In-App Browser Navigation Bar (Matches Reference Screenshot) -->
+    <div class="top-browser-bar">
+      <button class="browser-btn" id="closeBarBtn" title="Cerrar" aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2.5" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="browser-url-group">
+        <div class="browser-url-row">
+          <svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          <span class="browser-url-text">luciano4e.com</span>
+        </div>
+        <span class="browser-platform-sub">Oficial</span>
+      </div>
+      <button class="browser-btn" id="openMenuBtn" title="Compartir y Opciones" aria-label="Compartir y Opciones">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+      </button>
+    </div>
+
+    <!-- Full-Bleed Hero Image Section (Matches Reference Screenshot) -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-image-wrap">
+        <img src="assets/img/hero.jpg" alt="Luciano4E" class="hero-img" id="heroImg">
+        <div class="hero-fade-overlay"></div>
+      </div>
+
+      <div class="hero-info">
+        <!-- Artist Name -->
+        <div class="artist-title-row">
+          <h1 class="artist-name">Luciano4E</h1>
+        </div>
+
+        <!-- Clickable Handle with Verified Badge (Copies Profile Link with Animation) -->
+        <div class="artist-handle-row">
+          <button class="artist-handle-btn" id="handleCopyBtn" onclick="window.copyHandleLink && window.copyHandleLink()" title="Haz clic para copiar enlace del perfil" aria-label="Copiar enlace de Luciano4E">
+            <span class="handle-text" id="handleText">@luciano4e</span>
+            <span class="handle-verified-badge" id="handleBadge" title="Cuenta Oficial Verificada de Artista">
+              <svg class="official-verified-badge mini" viewBox="0 0 22 22" width="16" height="16">
+                <path fill="#0095F6" d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816z"/>
+                <path fill="#ffffff" d="M9.662 14.85l-3.429-3.428 1.293-1.302 2.136 2.136 5.485-5.485 1.302 1.293-6.787 6.786z"/>
+              </svg>
+            </span>
+            <span class="handle-copy-feedback" id="handleCopyFeedback">¡Copiado! ✓</span>
+          </button>
+        </div>
+
+        <!-- Real Platform Circular Icons Row (All User-Provided Links Included) -->
+        <div class="social-circles-wrapper">
+          <nav class="social-circles-row" aria-label="Perfiles Oficiales del Artista">
+            
+            <!-- 1. VIP Lock (Blue circular ring - Google Share) -->
+            <a href="https://share.google/CAJ0cD0RvcbOMeNYg" target="_blank" rel="noopener noreferrer" class="social-circle lock-circle" title="Acceso VIP (Google Share)" aria-label="Acceso VIP">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0095F6" stroke-width="2.3"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </a>
+
+            <!-- 2. Spotify Official Artist -->
+            <a href="https://open.spotify.com/artist/0OtaZUWi1z5G9pcURboTB2" target="_blank" rel="noopener noreferrer" class="social-circle spotify-circle" title="Spotify - Luciano4E" aria-label="Spotify Artista Oficial">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#1DB954"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.495 17.307c-.216.353-.674.464-1.026.25-2.812-1.718-6.352-2.107-10.52-1.155-.403.093-.807-.156-.9-.559-.092-.403.157-.807.56-.9 4.562-1.042 8.484-.596 11.637 1.339.352.215.464.673.249 1.025zm1.465-3.257c-.272.441-.85.58-1.291.309-3.218-1.977-8.125-2.55-11.93-1.393-.497.15-1.026-.134-1.176-.63-.15-.497.134-1.026.63-1.176 4.352-1.321 9.774-.68 13.458 1.599.442.271.58.85.309 1.291zm.126-3.414c-3.858-2.29-10.222-2.502-13.916-1.381-.592.179-1.22-.16-1.4-.753-.179-.592.16-1.22.753-1.4 4.254-1.291 11.286-1.042 15.719 1.588.533.316.708 1.01.392 1.543-.316.533-1.01.708-1.548.393z"/></svg>
+            </a>
+
+            <!-- 4. Apple Music -->
+            <a href="https://music.apple.com/us/artist/luciano4e/1672722974" target="_blank" rel="noopener noreferrer" class="social-circle apple-circle" title="Apple Music" aria-label="Apple Music">
+              <svg viewBox="0 0 24 24" width="22" height="22"><defs><linearGradient id="appleGradTopNav" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FA2D55"/><stop offset="100%" stop-color="#FE4263"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#appleGradTopNav)"/><path d="M16.5 6.2v8.28a2.53 2.53 0 1 1-1.8-2.43V8.8l-6 1.35v6.4a2.53 2.53 0 1 1-1.8-2.43V8.34a1.2 1.2 0 0 1 .94-1.18l7.5-1.7c.65-.15 1.16.35 1.16 1z" fill="#fff"/></svg>
+            </a>
+
+            <!-- 5. YouTube Channel -->
+            <a href="https://www.youtube.com/@Luciano4E" target="_blank" rel="noopener noreferrer" class="social-circle youtube-circle" title="Canal de YouTube" aria-label="Canal de YouTube">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+
+            <!-- 6. YouTube Music -->
+            <a href="https://music.youtube.com/channel/UCXX0IW6etYz_-d8jcU9mmLQ" target="_blank" rel="noopener noreferrer" class="social-circle ytmusic-circle" title="YouTube Music" aria-label="YouTube Music">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <circle cx="12" cy="12" r="12" fill="#FF0000"/>
+                <circle cx="12" cy="12" r="7" fill="none" stroke="#fff" stroke-width="1.3"/>
+                <circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="1.3"/>
+                <polygon points="10.2,9.2 15.2,12 10.2,14.8" fill="#fff"/>
+              </svg>
+            </a>
+
+            <!-- 7. Audiomack -->
+            <a href="https://audiomack.com/luciano4e/song/247-1" target="_blank" rel="noopener noreferrer" class="social-circle audiomack-circle" title="Audiomack" aria-label="Audiomack">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="#FFA200">
+                <path d="M.331 11.378s.5418-.089.765.1439c.2234.2332.077.7156-.2195.7237-.2965.01-.5705.063-.765-.1439-.1946-.2066-.1424-.6218.2195-.7237m5.881 3.2925c-.0522.01-.1075-.018-.164-.059-.3884-.5413-.5287-2.3923-.707-2.5025-.185-.1144-.8545 1.0255-2.1862.903-.5569-.051-1.1236-.4121-1.4573-.662.031-.4206.0364-1.4027.8659-1.0833.5038.1939 1.3667.7266 2.1245-.23.8378-1.0579 1.2999-.7506 1.577-.5206.2771.23.0925 1.4259.5058 1.0916.4133-.3343 2.082-2.4103 2.082-2.4103s1.292-1.303 1.4898.067c.1979 1.3698 1.0403 2.8877 1.2635 2.8445.2234-.043 2.8223-5.3253 3.1945-5.666.3722-.3409 1.6252-.2961 1.5657.5781-.0596.8742-.1871 6.308-.1871 6.308s-.147 1.5311.0924.7128c.0992-.3392.206-.6453.3392-1.0024.6414-2.0534 1.734-5.5613 2.2784-7.3688.1252-.4325.233-.8037.3166-1.0891l.0001-.0008a3.5925 3.5925 0 0 1 .0973-.3305c.0455-.1532.0763-.2546.0858-.2813.0243-.068.0925-.1192.1884-.157.0962-.061.1995-.064.3165-.067.3021-.027.6907.012 1.0401.1119.1018 0 .2125.037.3172.1118v.0001s.0063 0 .0151.01c.0023 0 .0048 0 .0073.01.0219.015.0573.045.0983.095.0012 0 .0025 0 .004.01.017.021.0341.045.0515.073.1952.2863.315.814.1948 1.7498-.2996 2.3354-.5316 7.1397-.5316 7.1397s-.0461.2298.4353-.782c.0167-.035.0383-.066.058-.098.026-.017.0552-.042.0913-.085.2974-.3546 1.0968-.5629 1.6512-.5586.2336.028.4293.087.5462.1609.2188.333.0897 1.562.0897 1.562-.4612.043-1.3403.2908-1.6519.3366-.3118.046-.7852 2.0699-1.4433 1.8629-.6581-.2069-2.1246-1.1268-2.1246-1.2533 0-.1102.1152-1.4546.1453-1.8016.0022-.024.004-.046.0058-.068a.152.152 0 0 1 .0014-.014l-.0002.0003c.0213-.2733.0023-.3927-.1239-.1199-.1086.2346-.581 1.7359-1.1078 3.3709-.0556.1429-1.0511 3.1558-1.1818 3.5231-.156.4261-.287.7523-.3776.921-.1378.1867-.3234.3036-.5826.2252-.6465-.1954-1.4654-1.0889-1.473-1.3106-.0155-1.2503.0608-7.973-.2423-7.4127-.311.5744-2.73 4.5608-2.73 4.5608-.0405.01-.0705.01-.1062.01-.1712-.019-.4366-.074-.51-.2384-.004-.01-.0094-.018-.0129-.028-.0035-.01-.0075-.022-.0135-.04-.0329-.1097-.0463-.2289-.0753-.3265-.1082-.3652-.2813-.8886-.463-1.421-.2784-.9079-.5654-1.8366-.6127-1.9391-.0923-.2007-.2268-.116-.3475-.0002-.54.458-1.6868 2.4793-2.7225 2.5898"/>
+              </svg>
+            </a>
+
+            <!-- 8. Instagram -->
+            <a href="https://www.instagram.com/luciano4e/" target="_blank" rel="noopener noreferrer" class="social-circle instagram-circle" title="Instagram" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="22" height="22"><defs><linearGradient id="igGradRef" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#igGradRef)"/><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.35a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z" fill="#fff"/><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/></svg>
+            </a>
+
+            <!-- 9. TikTok -->
+            <a href="https://www.tiktok.com/@luciano.4e" target="_blank" rel="noopener noreferrer" class="social-circle tiktok-circle" title="TikTok" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.32a6.38 6.38 0 0 0-.85-.06A6.34 6.34 0 0 0 3 15.6a6.34 6.34 0 0 0 10.82 4.48c1.7-1.7 1.86-4.27 1.86-4.48V8.71a8.28 8.28 0 0 0 4.91 1.63V6.9a4.86 4.86 0 0 1-1-.21z" fill="#25F4EE"/><path d="M18.59 5.69a4.83 4.83 0 0 1-3.77-4.25V1h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V8.32a6.38 6.38 0 0 0-.85-.06A6.34 6.34 0 0 0 2 14.6a6.34 6.34 0 0 0 10.82 4.48c1.7-1.7 1.86-4.27 1.86-4.48V7.71a8.28 8.28 0 0 0 4.91 1.63V5.9a4.86 4.86 0 0 1-1-.21z" fill="#FE2C55"/><path d="M19.09 6.19a4.83 4.83 0 0 1-3.77-4.25V1.5h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V8.82a6.38 6.38 0 0 0-.85-.06A6.34 6.34 0 0 0 2.5 15.1a6.34 6.34 0 0 0 10.82 4.48c1.7-1.7 1.86-4.27 1.86-4.48V8.21a8.28 8.28 0 0 0 4.91 1.63V6.4a4.86 4.86 0 0 1-1-.21z" fill="#000000"/></svg>
+            </a>
+
+            <!-- 10. Amazon Music US -->
+            <a href="https://www.amazon.com/music/player/artists/B09ZTDJVNP/luciano4e" target="_blank" rel="noopener noreferrer" class="social-circle amazon-circle" title="Amazon Music (US)" aria-label="Amazon Music US">
+              <svg viewBox="0 0 448 512" width="20" height="20" fill="#00A8E1">
+                <path d="M257.7 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56s-32.3-25.3-32.3-52.8l0-147.1C341.5 89 317 32 229.2 32 141.2 32 94.5 87 94.5 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8l0 40.6zM393.7 413c-7.7 10-70 67-174.5 67S34.7 408.5 10.2 379c-6.8-7.7 1-11.3 5.5-8.3 73.3 44.5 187.8 117.8 372.5 30.3 7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z"/>
+              </svg>
+            </a>
+
+            <!-- 11. Amazon Music DE -->
+            <a href="https://music.amazon.de/artists/B09ZT7483L/luciano4e" target="_blank" rel="noopener noreferrer" class="social-circle amazon-de-circle" title="Amazon Music (Alemania DE)" aria-label="Amazon Music Alemania">
+              <div class="amazon-de-wrap">
+                <svg viewBox="0 0 448 512" width="18" height="18" fill="#00A8E1">
+                  <path d="M257.7 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56s-32.3-25.3-32.3-52.8l0-147.1C341.5 89 317 32 229.2 32 141.2 32 94.5 87 94.5 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8l0 40.6zM393.7 413c-7.7 10-70 67-174.5 67S34.7 408.5 10.2 379c-6.8-7.7 1-11.3 5.5-8.3 73.3 44.5 187.8 117.8 372.5 30.3 7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z"/>
+                </svg>
+                <span class="country-tag">DE</span>
+              </div>
+            </a>
+
+            <!-- 12. iHeartRadio -->
+            <a href="https://www.iheart.com/artist/luciano4e-39751506/?autoplay=true" target="_blank" rel="noopener noreferrer" class="social-circle iheart-circle" title="iHeartRadio" aria-label="iHeartRadio">
+              <svg viewBox="0 0 512 512" width="22" height="22" fill="#C6002B">
+                <path id="iheartTop" d="M147.4 301.3c-32.3-28.6 -48.6 -58.4 -48.6 -86.7c0-28.3 15.9 -57.9 36.9 -71.1c10.3-4.4 14.6 8.2 8 12.6c-16.7 10.5-29.9 35.1 -29.9 58.7c0 23.6 14.7 49.6 43.6 75.2c7 8.7-3.8 16.5 -9.9 11.2zm48.5-25.5c-21.9-12.3 -36.6 -36.3 -36.6 -59.4c0-23.1 12.5 -43.7 32.3 -54c10.5-3.7 14 9.3 7 13.2c-15 7.8-24.3 23.3 -24.3 40.2c0.1 18.4 11.7 37.2 29 46.9c8.7 7.1-.6 16.7 -7.4 13.2zM256 253.9c-17.9 0-32.5 -14.5 -32.5 -32.4c0-17.9 14.6 -32.5 32.5 -32.5v-30.7c-19.4-28.9 -52.8 -48.8 -90.3 -48.8c-59.6 0-107.9 48.3 -107.9 107.9c0 37.8 24 65.1 49 90.3l97.9 92.6c6.3 3.9 13.5 1.3 13.6-5.8v-72.1c0-20.9 16.9 -37.8 37.8 -37.8z"/>
+                <use transform="matrix(-1 0 0 1 512 0)" href="#iheartTop"/>
+              </svg>
+            </a>
+
+            <!-- 13. 4E Hub Oficial -->
+            <a href="#links" class="social-circle hub-4e-circle" title="4E Hub Oficial" aria-label="4E Hub Oficial">
+              <span class="hub-pill-text">4E</span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Category Tag: Artista (Sin corazón, estilo Apple Glass) -->
+        <div class="category-pill-wrap" title="Artista Oficial">
+          <span class="category-badge-dot"></span>
+          <span class="category-text">Artista</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email / Fan Connect Bar (Matches Reference Screenshot) -->
+    <section class="connect-section">
+      <form class="connect-bar" id="connectForm" action="https://formsubmit.co/luciano4e@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" id="connectFormNext" value="http://localhost:3000/?sent=true">
+        <input type="hidden" name="_subject" value="⭐ Nuevo Fan Conectado - Luciano4E Portal">
+        <input 
+          type="email" 
+          name="email"
+          id="fanEmailInput" 
+          placeholder="tu@correo.com" 
+          class="connect-input" 
+          required 
+          autocomplete="email"
+          aria-label="Correo Electrónico"
+        >
+        <button type="submit" class="connect-btn" id="connectSubmitBtn">
+          <span>Conectar con</span>
+          <img src="assets/img/profile_circle.jpg" alt="Luciano4E" class="connect-btn-avatar">
+        </button>
+      </form>
+      <div class="connect-toast hidden" id="connectToast">
+        <span class="toast-icon">✨</span>
+        <span class="toast-msg">¡Te has conectado con Luciano4E exitosamente!</span>
+      </div>
+    </section>
+
+    <!-- Real Song Audio Player Preview Card ("Préndete" by Luciano4E) -->
+    <section class="player-section">
+      <div class="mini-player-card" id="audioPlayerCard">
+        <div class="player-left">
+          <div class="track-artwork" id="trackPlayTrigger" title="Reproducir / Pausar Préndete">
+            <img src="assets/img/prendete_alt.jpg" alt="Préndete cover" class="track-thumb">
+            <div class="play-overlay">
+              <svg class="thumb-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="thumb-pause hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </div>
+          </div>
+          <div class="track-details">
+            <div class="track-status">
+              <span class="live-dot"></span>
+              <span>ÚLTIMO LANZAMIENTO • ADELANTO OFICIAL</span>
+            </div>
+            <div class="track-title">Préndete</div>
+            <div class="track-artist">Luciano4E • Sencillo Oficial</div>
+          </div>
+        </div>
+
+        <div class="player-controls">
+          <!-- Direct Stream Spotify Pill -->
+          <a href="https://open.spotify.com/album/2PEe1vLbdwAKeKYQDlLIpm" target="_blank" rel="noopener noreferrer" class="player-spotify-pill" title="Escuchar Préndete en Spotify">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="#1DB954"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.495 17.307c-.216.353-.674.464-1.026.25-2.812-1.718-6.352-2.107-10.52-1.155-.403.093-.807-.156-.9-.559-.092-.403.157-.807.56-.9 4.562-1.042 8.484-.596 11.637 1.339.352.215.464.673.249 1.025zm1.465-3.257c-.272.441-.85.58-1.291.309-3.218-1.977-8.125-2.55-11.93-1.393-.497.15-1.026-.134-1.176-.63-.15-.497.134-1.026.63-1.176 4.352-1.321 9.774-.68 13.458 1.599.442.271.58.85.309 1.291zm.126-3.414c-3.858-2.29-10.222-2.502-13.916-1.381-.592.179-1.22-.16-1.4-.753-.179-.592.16-1.22.753-1.4 4.254-1.291 11.286-1.042 15.719 1.588.533.316.708 1.01.392 1.543-.316.533-1.01.708-1.548.393z"/></svg>
+            <span>Spotify</span>
+          </a>
+
+          <!-- Animated Equalizer Bars -->
+          <div class="eq-visualizer" id="eqVisualizer">
+            <span class="eq-bar bar-1"></span>
+            <span class="eq-bar bar-2"></span>
+            <span class="eq-bar bar-3"></span>
+            <span class="eq-bar bar-4"></span>
+            <span class="eq-bar bar-5"></span>
+          </div>
+
+          <button class="player-action-btn" id="mainAudioBtn" aria-label="Play or Pause Préndete">
+            <svg class="audio-btn-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="audio-btn-pause hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Visual Media Cards (All 12 User-Provided Links Included) -->
+    <section class="media-cards-section" id="links">
+
+      <!-- Section Indicator Header -->
+      <div class="cards-header-row">
+        <span class="cards-section-kicker">TODOS LOS ENLACES OFICIALES (12)</span>
+        <span class="cards-count-badge">Acceso Directo</span>
+      </div>
+
+      <!-- Card 1: Préndete Single ("Lo que estabas buscando 💙") -->
+      <a href="https://open.spotify.com/album/2PEe1vLbdwAKeKYQDlLIpm" target="_blank" rel="noopener noreferrer" class="media-card featured-card" id="cardFeatured" data-url="https://open.spotify.com/album/2PEe1vLbdwAKeKYQDlLIpm">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/prendete_cover.jpg" alt="Préndete Sencillo" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge link-badge">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Lo que estabas buscando 💙</h2>
+            <p class="card-sub">Préndete — Sencillo Disponible en Todas las Plataformas</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: Spotify Official Artist (https://open.spotify.com/artist/0OtaZUWi1z5G9pcURboTB2) -->
+      <a href="https://open.spotify.com/artist/0OtaZUWi1z5G9pcURboTB2" target="_blank" rel="noopener noreferrer" class="media-card" id="cardSpotify" data-url="https://open.spotify.com/artist/0OtaZUWi1z5G9pcURboTB2">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/spotify.jpg" alt="Luciano4E en Spotify" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge spotify-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#1DB954"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.495 17.307c-.216.353-.674.464-1.026.25-2.812-1.718-6.352-2.107-10.52-1.155-.403.093-.807-.156-.9-.559-.092-.403.157-.807.56-.9 4.562-1.042 8.484-.596 11.637 1.339.352.215.464.673.249 1.025zm1.465-3.257c-.272.441-.85.58-1.291.309-3.218-1.977-8.125-2.55-11.93-1.393-.497.15-1.026-.134-1.176-.63-.15-.497.134-1.026.63-1.176 4.352-1.321 9.774-.68 13.458 1.599.442.271.58.85.309 1.291zm.126-3.414c-3.858-2.29-10.222-2.502-13.916-1.381-.592.179-1.22-.16-1.4-.753-.179-.592.16-1.22.753-1.4 4.254-1.291 11.286-1.042 15.719 1.588.533.316.708 1.01.392 1.543-.316.533-1.01.708-1.548.393z"/></svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Spotify • Artista Oficial</h2>
+            <p class="card-sub">Escucha la Discografía, Álbumes y Éxitos en Spotify</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3: Apple Music (https://music.apple.com/us/artist/luciano4e/1672722974) -->
+      <a href="https://music.apple.com/us/artist/luciano4e/1672722974" target="_blank" rel="noopener noreferrer" class="media-card" id="cardApple" data-url="https://music.apple.com/us/artist/luciano4e/1672722974">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/single.jpg" alt="Luciano4E en Apple Music" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge apple-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22"><defs><linearGradient id="appleGradC" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FA2D55"/><stop offset="100%" stop-color="#FE4263"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#appleGradC)"/><path d="M16.5 6.2v8.28a2.53 2.53 0 1 1-1.8-2.43V8.8l-6 1.35v6.4a2.53 2.53 0 1 1-1.8-2.43V8.34a1.2 1.2 0 0 1 .94-1.18l7.5-1.7c.65-.15 1.16.35 1.16 1z" fill="#fff"/></svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Apple Music</h2>
+            <p class="card-sub">Calidad Lossless • Añade a Tu Biblioteca Musical</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4: YouTube Music (https://music.youtube.com/channel/UCXX0IW6etYz_-d8jcU9mmLQ) -->
+      <a href="https://music.youtube.com/channel/UCXX0IW6etYz_-d8jcU9mmLQ" target="_blank" rel="noopener noreferrer" class="media-card" id="cardYoutubeMusic" data-url="https://music.youtube.com/channel/UCXX0IW6etYz_-d8jcU9mmLQ">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/youtube.jpg" alt="Luciano4E en YouTube Music" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge youtube-music-badge">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <circle cx="12" cy="12" r="12" fill="#FF0000"/>
+              <circle cx="12" cy="12" r="7" fill="none" stroke="#fff" stroke-width="1.3"/>
+              <circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="1.3"/>
+              <polygon points="10.2,9.2 15.2,12 10.2,14.8" fill="#fff"/>
+            </svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">YouTube Music</h2>
+            <p class="card-sub">Canal de Artista, Pistas Oficiales y Playlists</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5: YouTube Channel & Videos (https://www.youtube.com/@Luciano4E) -->
+      <a href="https://www.youtube.com/@Luciano4E" target="_blank" rel="noopener noreferrer" class="media-card" id="cardYoutube" data-url="https://www.youtube.com/@Luciano4E">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/cover_youtube_channel.jpg" alt="Canal Oficial de YouTube de Luciano4E" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge youtube-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Canal de YouTube</h2>
+            <p class="card-sub">Videos Musicales Oficiales, Estrenos y Visualizers</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6: Audiomack (https://audiomack.com/luciano4e/song/247-1) -->
+      <a href="https://audiomack.com/luciano4e/song/247-1" target="_blank" rel="noopener noreferrer" class="media-card" id="cardAudiomack" data-url="https://audiomack.com/luciano4e/song/247-1">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/cover_24_7.png" alt="Luciano4E - 24/7 en Audiomack" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge audiomack-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#FFA200">
+              <path d="M.331 11.378s.5418-.089.765.1439c.2234.2332.077.7156-.2195.7237-.2965.01-.5705.063-.765-.1439-.1946-.2066-.1424-.6218.2195-.7237m5.881 3.2925c-.0522.01-.1075-.018-.164-.059-.3884-.5413-.5287-2.3923-.707-2.5025-.185-.1144-.8545 1.0255-2.1862.903-.5569-.051-1.1236-.4121-1.4573-.662.031-.4206.0364-1.4027.8659-1.0833.5038.1939 1.3667.7266 2.1245-.23.8378-1.0579 1.2999-.7506 1.577-.5206.2771.23.0925 1.4259.5058 1.0916.4133-.3343 2.082-2.4103 2.082-2.4103s1.292-1.303 1.4898.067c.1979 1.3698 1.0403 2.8877 1.2635 2.8445.2234-.043 2.8223-5.3253 3.1945-5.666.3722-.3409 1.6252-.2961 1.5657.5781-.0596.8742-.1871 6.308-.1871 6.308s-.147 1.5311.0924.7128c.0992-.3392.206-.6453.3392-1.0024.6414-2.0534 1.734-5.5613 2.2784-7.3688.1252-.4325.233-.8037.3166-1.0891l.0001-.0008a3.5925 3.5925 0 0 1 .0973-.3305c.0455-.1532.0763-.2546.0858-.2813.0243-.068.0925-.1192.1884-.157.0962-.061.1995-.064.3165-.067.3021-.027.6907.012 1.0401.1119.1018 0 .2125.037.3172.1118v.0001s.0063 0 .0151.01c.0023 0 .0048 0 .0073.01.0219.015.0573.045.0983.095.0012 0 .0025 0 .004.01.017.021.0341.045.0515.073.1952.2863.315.814.1948 1.7498-.2996 2.3354-.5316 7.1397-.5316 7.1397s-.0461.2298.4353-.782c.0167-.035.0383-.066.058-.098.026-.017.0552-.042.0913-.085.2974-.3546 1.0968-.5629 1.6512-.5586.2336.028.4293.087.5462.1609.2188.333.0897 1.562.0897 1.562-.4612.043-1.3403.2908-1.6519.3366-.3118.046-.7852 2.0699-1.4433 1.8629-.6581-.2069-2.1246-1.1268-2.1246-1.2533 0-.1102.1152-1.4546.1453-1.8016.0022-.024.004-.046.0058-.068a.152.152 0 0 1 .0014-.014l-.0002.0003c.0213-.2733.0023-.3927-.1239-.1199-.1086.2346-.581 1.7359-1.1078 3.3709-.0556.1429-1.0511 3.1558-1.1818 3.5231-.156.4261-.287.7523-.3776.921-.1378.1867-.3234.3036-.5826.2252-.6465-.1954-1.4654-1.0889-1.473-1.3106-.0155-1.2503.0608-7.973-.2423-7.4127-.311.5744-2.73 4.5608-2.73 4.5608-.0405.01-.0705.01-.1062.01-.1712-.019-.4366-.074-.51-.2384-.004-.01-.0094-.018-.0129-.028-.0035-.01-.0075-.022-.0135-.04-.0329-.1097-.0463-.2289-.0753-.3265-.1082-.3652-.2813-.8886-.463-1.421-.2784-.9079-.5654-1.8366-.6127-1.9391-.0923-.2007-.2268-.116-.3475-.0002-.54.458-1.6868 2.4793-2.7225 2.5898"/>
+            </svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Audiomack</h2>
+            <p class="card-sub">Escucha "24/7" y Éxitos Urbanos Gratis en Audiomack</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 7: Instagram (https://www.instagram.com/luciano4e/) -->
+      <a href="https://www.instagram.com/luciano4e/" target="_blank" rel="noopener noreferrer" class="media-card" id="cardInstagram" data-url="https://www.instagram.com/luciano4e/">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/instagram.jpg" alt="Luciano4E Instagram" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge instagram-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22"><defs><linearGradient id="igGC" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#fdf497"/><stop offset="5%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#igGC)"/><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.35a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z" fill="#fff"/><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/></svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Instagram</h2>
+            <p class="card-sub">@luciano4e • Historias, Detrás de Escena y Novedades</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 8: TikTok (https://www.tiktok.com/@luciano.4e) -->
+      <a href="https://www.tiktok.com/@luciano.4e" target="_blank" rel="noopener noreferrer" class="media-card" id="cardTiktok" data-url="https://www.tiktok.com/@luciano.4e">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/tiktok.jpg" alt="Luciano4E en TikTok" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge tiktok-badge">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V9.32a6.38 6.38 0 0 0-.85-.06A6.34 6.34 0 0 0 3 15.6a6.34 6.34 0 0 0 10.82 4.48c1.7-1.7 1.86-4.27 1.86-4.48V8.71a8.28 8.28 0 0 0 4.91 1.63V6.9a4.86 4.86 0 0 1-1-.21z" fill="#25F4EE"/><path d="M18.59 5.69a4.83 4.83 0 0 1-3.77-4.25V1h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V8.32a6.38 6.38 0 0 0-.85-.06A6.34 6.34 0 0 0 2 14.6a6.34 6.34 0 0 0 10.82 4.48c1.7-1.7 1.86-4.27 1.86-4.48V7.71a8.28 8.28 0 0 0 4.91 1.63V5.9a4.86 4.86 0 0 1-1-.21z" fill="#FE2C55"/><path d="M19.09 6.19a4.83 4.83 0 0 1-3.77-4.25V1.5h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.85.12V8.82a6.38 6.38 0 0 0-.85-.06A6.34 6.34 0 0 0 2.5 15.1a6.34 6.34 0 0 0 10.82 4.48c1.7-1.7 1.86-4.27 1.86-4.48V8.21a8.28 8.28 0 0 0 4.91 1.63V6.4a4.86 4.86 0 0 1-1-.21z" fill="#07070a"/></svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">TikTok</h2>
+            <p class="card-sub">@luciano.4e • Videos en Vivo, Sonidos y Tendencias</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 9: Amazon Music US (https://www.amazon.com/music/player/artists/B09ZTDJVNP/luciano4e) -->
+      <a href="https://www.amazon.com/music/player/artists/B09ZTDJVNP/luciano4e" target="_blank" rel="noopener noreferrer" class="media-card" id="cardAmazonUS" data-url="https://www.amazon.com/music/player/artists/B09ZTDJVNP/luciano4e">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/amazon.jpg" alt="Luciano4E en Amazon Music" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge amazon-badge">
+            <svg viewBox="0 0 448 512" width="20" height="20" fill="#00A8E1">
+              <path d="M257.7 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56s-32.3-25.3-32.3-52.8l0-147.1C341.5 89 317 32 229.2 32 141.2 32 94.5 87 94.5 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8l0 40.6zM393.7 413c-7.7 10-70 67-174.5 67S34.7 408.5 10.2 379c-6.8-7.7 1-11.3 5.5-8.3 73.3 44.5 187.8 117.8 372.5 30.3 7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z"/>
+            </svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Amazon Music (EE. UU.)</h2>
+            <p class="card-sub">Escucha en Ultra HD y Prime Music</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 10: Amazon Music Germany DE (https://music.amazon.de/artists/B09ZT7483L/luciano4e) -->
+      <a href="https://music.amazon.de/artists/B09ZT7483L/luciano4e" target="_blank" rel="noopener noreferrer" class="media-card" id="cardAmazonDE" data-url="https://music.amazon.de/artists/B09ZT7483L/luciano4e">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/cover_mami.png" alt="Luciano4E - MAMI en Amazon Music DE" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge amazon-badge">
+            <div class="amazon-de-wrap">
+              <svg viewBox="0 0 448 512" width="18" height="18" fill="#00A8E1">
+                <path d="M257.7 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56s-32.3-25.3-32.3-52.8l0-147.1C341.5 89 317 32 229.2 32 141.2 32 94.5 87 94.5 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8l0 40.6zM393.7 413c-7.7 10-70 67-174.5 67S34.7 408.5 10.2 379c-6.8-7.7 1-11.3 5.5-8.3 73.3 44.5 187.8 117.8 372.5 30.3 7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z"/>
+              </svg>
+              <span class="country-tag">DE</span>
+            </div>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Amazon Music (Alemania)</h2>
+            <p class="card-sub">Escucha "MAMI" y Éxitos Globales • Amazon Music DE</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 11: iHeartRadio (https://www.iheart.com/artist/luciano4e-39751506/?autoplay=true) -->
+      <a href="https://www.iheart.com/artist/luciano4e-39751506/?autoplay=true" target="_blank" rel="noopener noreferrer" class="media-card" id="cardIHeart" data-url="https://www.iheart.com/artist/luciano4e-39751506/?autoplay=true">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/luciano_cash.jpg" alt="Luciano4E en iHeartRadio - Me Envidian" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge iheart-badge">
+            <svg viewBox="0 0 512 512" width="20" height="20" fill="#C6002B">
+              <path id="iheartCard" d="M147.4 301.3c-32.3-28.6 -48.6 -58.4 -48.6 -86.7c0-28.3 15.9 -57.9 36.9 -71.1c10.3-4.4 14.6 8.2 8 12.6c-16.7 10.5-29.9 35.1 -29.9 58.7c0 23.6 14.7 49.6 43.6 75.2c7 8.7-3.8 16.5 -9.9 11.2zm48.5-25.5c-21.9-12.3 -36.6 -36.3 -36.6 -59.4c0-23.1 12.5 -43.7 32.3 -54c10.5-3.7 14 9.3 7 13.2c-15 7.8-24.3 23.3 -24.3 40.2c0.1 18.4 11.7 37.2 29 46.9c8.7 7.1-.6 16.7 -7.4 13.2zM256 253.9c-17.9 0-32.5 -14.5 -32.5 -32.4c0-17.9 14.6 -32.5 32.5 -32.5v-30.7c-19.4-28.9 -52.8 -48.8 -90.3 -48.8c-59.6 0-107.9 48.3 -107.9 107.9c0 37.8 24 65.1 49 90.3l97.9 92.6c6.3 3.9 13.5 1.3 13.6-5.8v-72.1c0-20.9 16.9 -37.8 37.8 -37.8z"/>
+              <use transform="matrix(-1 0 0 1 512 0)" href="#iheartCard"/>
+            </svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">iHeartRadio</h2>
+            <p class="card-sub">Escucha "Me Envidian" y Transmisiones de Radio</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 12: Exclusive VIP Hub / Google Share (https://share.google/CAJ0cD0RvcbOMeNYg) -->
+      <a href="https://share.google/CAJ0cD0RvcbOMeNYg" target="_blank" rel="noopener noreferrer" class="media-card" id="cardVipShare" data-url="https://share.google/CAJ0cD0RvcbOMeNYg">
+        <div class="media-card-img-wrap">
+          <img src="assets/img/vip.jpg" alt="Pase VIP de Luciano4E" class="card-img" loading="lazy">
+          <div class="card-gradient-overlay"></div>
+          
+          <div class="card-top-badge lock-badge-card">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#2563EB" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+
+          <div class="card-bottom-info">
+            <h2 class="card-title">Hub VIP y Acceso Exclusivo</h2>
+            <p class="card-sub">Lanzamientos Anticipados, Fechas y Contenido VIP</p>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+    <!-- Aesthetic Photo Gallery Strip (From reference screenshot) -->
+    <section class="gallery-section">
+      <div class="gallery-header">
+        <span class="gallery-title">DISCOGRAFÍA OFICIAL Y ARCHIVO</span>
+        <span class="gallery-count">3 Destacados</span>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item" data-index="0" role="button" tabindex="0" aria-label="Ver foto 1 en la galería">
+          <img src="assets/img/gallery1.jpg" alt="Luciano4E - Sesión Miami Heat" class="gallery-thumb" loading="lazy">
+          <div class="gallery-item-glow"></div>
+        </div>
+        <div class="gallery-item" data-index="1" role="button" tabindex="0" aria-label="Ver foto 2 en la galería">
+          <img src="assets/img/gallery3.jpg" alt="Luciano4E - Concierto en Vivo" class="gallery-thumb" loading="lazy">
+          <div class="gallery-item-glow"></div>
+        </div>
+        <div class="gallery-item" data-index="2" role="button" tabindex="0" aria-label="Ver foto 3 en la galería">
+          <img src="assets/img/gallery4.jpg" alt="Luciano4E - Préndete Edición Neon Deluxe" class="gallery-thumb" loading="lazy">
+          <div class="gallery-item-glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apple-Grade Executive Artist Card & Footer (Preserved with 3D 4E Gem, Real QR & Real Share) -->
+    <footer class="profile-footer">
+      <div class="apple-glass-card" id="appleGlassFooterCard">
+        <!-- Interactive Spotlight Overlay -->
+        <div class="glass-spotlight" id="glassSpotlight"></div>
+        <div class="glass-specular-edge"></div>
+
+        <!-- Avatar with Concentric Soundwave Halo & 3D Holographic 4E Gem -->
+        <div class="footer-avatar-cluster">
+          <div class="soundwave-pulse wave-1"></div>
+          <div class="soundwave-pulse wave-2"></div>
+          <div class="avatar-ring-glow">
+            <img src="assets/img/profile_circle.jpg" alt="Luciano4E" class="footer-avatar">
+          </div>
+          <!-- 3D Holographic 4E Gem Badge -->
+          <div class="gem-4e-badge" title="Emblema Oficial 4E">
+            <span class="gem-4e-text">4E</span>
+            <span class="gem-shimmer-sweep"></span>
+          </div>
+        </div>
+        
+        <!-- Artist Identity with Official Scalloped Checkmark -->
+        <div class="footer-artist-meta">
+          <div class="footer-name-row">
+            <h2 class="footer-artist-name">Luciano4E</h2>
+            <span class="footer-verified-badge" title="Artista Musical Oficial Verificado">
+              <svg class="official-verified-badge" viewBox="0 0 22 22" width="22" height="22">
+                <path fill="#0095F6" d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816z"/>
+                <path fill="#ffffff" d="M9.662 14.85l-3.429-3.428 1.293-1.302 2.136 2.136 5.485-5.485 1.302 1.293-6.787 6.786z"/>
+              </svg>
+            </span>
+          </div>
+          <p class="footer-promo-text">Portal Oficial de Luciano4E</p>
+          <div class="footer-live-badge">
+            <span class="live-status-dot"></span>
+            <span>TRANSMITIENDO A NIVEL MUNDIAL • NUEVO SENCILLO DISPONIBLE</span>
+          </div>
+        </div>
+
+        <!-- Apple-Style Liquid Capsule Action Buttons -->
+        <div class="footer-actions">
+          <button class="apple-capsule-btn share-trigger-btn" id="shareProfileFooterBtn" aria-label="Compartir Perfil">
+            <div class="btn-shimmer"></div>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+            <span>Compartir Perfil</span>
+          </button>
+
+          <button class="apple-capsule-btn qr-trigger-btn" id="qrProfileBtn" aria-label="Abrir Código QR Oficial">
+            <div class="btn-shimmer"></div>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+              <rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/>
+            </svg>
+            <span>Código QR</span>
+          </button>
+
+          <button class="apple-capsule-btn copy-trigger-btn" id="quickCopyFooterBtn" aria-label="Copiar Enlace Directo">
+            <div class="btn-shimmer"></div>
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+            <span id="quickCopyBtnText">Copiar Enlace</span>
+          </button>
+        </div>
+
+        <p class="footer-rights">© 2026 Luciano4E • Todos los Derechos Reservados.</p>
+      </div>
+    </footer>
+
+    <!-- Bottom Floating VIP Bar with Hero Portrait & Glossy Glass -->
+    <div class="floating-bottom-bar" id="floatingBar">
+      <div class="floating-left">
+        <div class="floating-avatar-wrap" title="Luciano4E Oficial">
+          <img src="assets/img/profile_circle.jpg" alt="Luciano4E" class="floating-avatar-img">
+          <span class="floating-avatar-sheen"></span>
+        </div>
+        <div class="floating-text">
+          <span class="floating-title">Luciano4E</span>
+          <span class="floating-sub-text">COLABORACIONES • CONCIERTOS</span>
+        </div>
+      </div>
+      <div class="floating-right">
+        <button class="floating-action-btn" id="floatingJoinBtn" aria-label="Contactar para Colaboraciones y Conciertos">
+          <span>CONTACTAR</span>
+        </button>
+        <button class="floating-close-btn" id="floatingDismissBtn" aria-label="Cerrar">✕</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Collaborations, Concerts & Updates Contact Modal (Apple Vision Liquid Glass Sheet) -->
+  <div class="vip-email-modal hidden" id="vipEmailModal" role="dialog" aria-modal="true" aria-label="Colaboraciones y Conciertos">
+    <div class="modal-glass-backdrop" id="vipEmailBackdrop"></div>
+    <div class="apple-glass-sheet vip-email-sheet">
+      <div class="sheet-drag-handle"></div>
+      
+      <div class="sheet-header">
+        <div class="sheet-header-title">
+          <span class="sheet-kicker">CONTACTO OFICIAL & UPDATES</span>
+          <h3 class="sheet-main-title">Colaboraciones y Conciertos</h3>
+        </div>
+        <button class="sheet-close-btn" id="vipEmailModalClose" aria-label="Cerrar Ventana">✕</button>
+      </div>
+
+      <div class="vip-modal-body">
+        <div class="vip-avatar-badge">
+          <img src="assets/img/profile_circle.jpg" alt="Luciano4E" class="vip-badge-img">
+          <div class="vip-badge-ring"></div>
+        </div>
+        <p class="vip-modal-desc">
+          ¿Interesado en una colaboración musical, propuesta de conciertos o recibir las fechas de próximas giras de <strong>Luciano4E</strong>? Ingresa tu Gmail o correo de contacto directo.
+        </p>
+
+        <!-- Topic Pills -->
+        <div class="vip-topics-row" id="vipTopicsRow">
+          <button type="button" class="vip-topic-pill active" data-topic="Colaboración / Feat">
+            <span>🤝 Colaboración / Feat</span>
+          </button>
+          <button type="button" class="vip-topic-pill" data-topic="Conciertos & Fechas">
+            <span>🎤 Conciertos & Giras</span>
+          </button>
+          <button type="button" class="vip-topic-pill" data-topic="Booking / Shows">
+            <span>🔥 Booking & Shows</span>
+          </button>
+        </div>
+
+        <form class="vip-email-form" id="vipModalForm" action="https://formsubmit.co/luciano4e@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" id="vipFormNext" value="http://localhost:3000/?sent=true">
+          <input type="hidden" name="_subject" id="vipFormSubject" value="🎵 Nueva propuesta de colaboración / conciertos - Luciano4E">
+          <input type="hidden" name="category" id="vipSelectedTopic" value="Colaboración / Feat">
+
+          <div class="vip-input-wrap">
+            <svg class="vip-input-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <input 
+              type="text" 
+              name="name" 
+              id="vipModalNameInput" 
+              class="vip-text-input" 
+              placeholder="Tu nombre o nombre artístico..." 
+              required 
+              autocomplete="name"
+              aria-label="Tu Nombre o Nombre Artístico"
+            >
+          </div>
+
+          <div class="vip-input-wrap">
+            <svg class="vip-input-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <input 
+              type="email" 
+              name="email" 
+              id="vipModalEmailInput" 
+              class="vip-email-input" 
+              placeholder="Ingresa tu Gmail o correo de contacto..." 
+              required 
+              autocomplete="email"
+              aria-label="Gmail o Correo de Contacto"
+            >
+          </div>
+
+          <div class="vip-textarea-wrap">
+            <textarea 
+              name="message" 
+              id="vipModalMessageInput" 
+              class="vip-textarea-input" 
+              placeholder="Mensaje o propuesta breve (opcional)..." 
+              rows="2"
+              aria-label="Mensaje o Propuesta"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="vip-submit-btn" id="vipModalSubmitBtn">
+            <span>ENVIAR MENSAJE & CONECTAR</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+
+        <div class="vip-success-box hidden" id="vipSuccessBox">
+          <div class="vip-check-icon">✓</div>
+          <h4 class="vip-success-title">¡Mensaje Enviado Directo al Gmail!</h4>
+          <p class="vip-success-desc" id="vipSuccessDesc">Tu propuesta fue enviada directamente al Gmail de Luciano4E. Recibirás respuesta a tu correo a la brevedad.</p>
+          <div class="vip-gmail-direct-wrap">
+            <a href="#" id="vipDirectGmailBtn" class="vip-direct-gmail-btn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+              </svg>
+              <span>Abrir directamente en Gmail</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Photo Lightbox Modal -->
+  <div class="lightbox-modal hidden" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Visor de Fotos">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Cerrar Visor">✕</button>
+      <button class="lightbox-nav-btn prev" id="lightboxPrevBtn" aria-label="Foto Anterior">‹</button>
+      <div class="lightbox-img-wrap">
+        <img src="" alt="Foto ampliada" id="lightboxImg">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+      <button class="lightbox-nav-btn next" id="lightboxNextBtn" aria-label="Foto Siguiente">›</button>
+    </div>
+  </div>
+
+  <!-- Real Functional QR Code Modal (Apple Vision Glass Sheet) -->
+  <div class="qr-modal hidden" id="qrModal" role="dialog" aria-modal="true" aria-label="Pase Oficial QR">
+    <div class="modal-glass-backdrop" id="qrBackdrop"></div>
+    <div class="apple-glass-sheet qr-sheet">
+      <div class="sheet-drag-handle"></div>
+      
+      <div class="sheet-header">
+        <div class="sheet-header-title">
+          <span class="sheet-kicker">PASE INTELIGENTE</span>
+          <h3 class="sheet-main-title">Código QR Oficial de Luciano4E</h3>
+        </div>
+        <button class="sheet-close-btn" id="qrModalClose" aria-label="Cerrar Modal QR">✕</button>
+      </div>
+
+      <!-- Scannable QR Frame with Laser Scanner Effect -->
+      <div class="qr-scanner-card" id="qrCaptureArea">
+        <div class="qr-laser-scanner"></div>
+        <div class="qr-matrix-wrap" id="qrcodeContainer">
+          <div id="qrcodeReal"></div>
+          <div class="qr-center-emblem">
+            <span class="qr-center-text">4E</span>
+          </div>
+        </div>
+        <div class="qr-scan-prompt">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <span>Apunta la cámara de cualquier teléfono para escanear</span>
+        </div>
+      </div>
+
+      <!-- QR Action Controls -->
+      <div class="qr-actions-row">
+        <button class="qr-action-btn download-btn" id="downloadQrBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Descargar Imagen QR</span>
+        </button>
+        <button class="qr-action-btn copy-btn" id="qrCopyLinkBtn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span id="qrCopyBtnLabel">Copiar Enlace</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real Functional Share Sheet (Apple Glass Sheet) -->
+  <div class="share-modal hidden" id="shareModal" role="dialog" aria-modal="true" aria-label="Modal Compartir">
+    <div class="modal-glass-backdrop" id="shareBackdrop"></div>
+    <div class="apple-glass-sheet share-sheet">
+      <div class="sheet-drag-handle"></div>
+
+      <div class="sheet-header">
+        <div class="sheet-header-title">
+          <span class="sheet-kicker">CONECTA Y COMPARTE</span>
+          <h3 class="sheet-main-title">Compartir a Luciano4E</h3>
+        </div>
+        <button class="sheet-close-btn" id="shareModalClose" aria-label="Cerrar Modal Compartir">✕</button>
+      </div>
+      
+      <!-- Artist Preview Card Inside Share Sheet -->
+      <div class="share-artist-card">
+        <img src="assets/img/profile_circle.jpg" alt="Luciano4E" class="share-avatar-img">
+        <div class="share-artist-info">
+          <div class="share-artist-title">
+            <span>Luciano4E</span>
+            <span class="share-verified-mark">✓</span>
+          </div>
+          <div class="share-card-handle">@luciano4e • Portal Oficial de Música</div>
+        </div>
+      </div>
+
+      <!-- Quick Copy Link Box -->
+      <div class="copy-link-row">
+        <input type="text" value="https://www.luciano4e.com" readonly id="copyLinkInput" class="copy-input" aria-label="Enlace del perfil">
+        <button class="apple-copy-btn" id="copyLinkBtn">
+          <span id="copyLinkBtnText">Copiar Enlace</span>
+        </button>
+      </div>
+
+      <!-- Real Direct Social Sharing Destinations -->
+      <div class="social-share-grid">
+        <a href="#" id="shareWhatsApp" class="social-share-pill whatsapp-pill" target="_blank" rel="noopener noreferrer">
+          <span class="social-share-icon">💬</span>
+          <span class="social-share-label">WhatsApp</span>
+        </a>
+        <a href="#" id="shareInstagram" class="social-share-pill instagram-pill">
+          <span class="social-share-icon">📸</span>
+          <span class="social-share-label">Historias de Instagram</span>
+        </a>
+        <a href="#" id="shareTwitter" class="social-share-pill twitter-pill" target="_blank" rel="noopener noreferrer">
+          <span class="social-share-icon">𝕏</span>
+          <span class="social-share-label">X / Twitter</span>
+        </a>
+        <a href="#" id="shareTelegram" class="social-share-pill telegram-pill" target="_blank" rel="noopener noreferrer">
+          <span class="social-share-icon">✈️</span>
+          <span class="social-share-label">Telegram</span>
+        </a>
+        <a href="#" id="shareSMS" class="social-share-pill sms-pill">
+          <span class="social-share-icon">📱</span>
+          <span class="social-share-label">Mensajes</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Toast Notification -->
+  <div class="glass-toast hidden" id="globalToast" role="status" aria-live="polite">
+    <span class="toast-emoji" id="toastEmoji">✨</span>
+    <span class="toast-text" id="toastText">¡Enlace copiado al portapapeles!</span>
+  </div>
+
+  <!-- Script Modules -->
+  <script src="assets/js/qrcode.min.js"></script>
+  <script src="audio-preview.js"></script>
+  <script src="app.js?v=9"></script>
+</body>
+</html>
