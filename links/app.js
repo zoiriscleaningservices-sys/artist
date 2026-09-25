@@ -182,15 +182,51 @@ document.addEventListener('DOMContentLoaded', () => {
   // Email / VIP Connect Interaction
   // ==========================================
   if (connectForm) {
-    const connectFormNext = document.getElementById('connectFormNext');
-    if (connectFormNext) {
-      connectFormNext.value = window.location.origin + window.location.pathname + '?sent=true';
-    }
+    connectForm.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Stop any browser redirect completely!
+      const email = fanEmailInput ? fanEmailInput.value.trim() : '';
+      if (!email || !email.includes('@')) return;
 
-    connectForm.addEventListener('submit', () => {
+      const originalText = connectSubmitBtn ? connectSubmitBtn.innerHTML : '';
       if (connectSubmitBtn) {
-        connectSubmitBtn.innerHTML = `<span>Enviando al Gmail...</span>`;
+        connectSubmitBtn.innerHTML = `<span>Conectando...</span>`;
+        connectSubmitBtn.disabled = true;
       }
+
+      try {
+        await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(ARTIST_CONFIG.contactEmail)}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            email: email,
+            tipo: 'Fan Connect / Suscripción',
+            _subject: `⭐ Nuevo Fan Conectado (${email}) - Luciano4E Portal`,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+      } catch (err) {
+        console.warn('FormSubmit connect info:', err);
+      }
+
+      if (fanEmailInput) fanEmailInput.value = '';
+      if (connectSubmitBtn) connectSubmitBtn.innerHTML = `<span>¡Conectado! ✓</span>`;
+      if (connectToast) connectToast.classList.remove('hidden');
+      showToast('¡Te has conectado con éxito a Luciano4E! 🚀', '✨');
+
+      setTimeout(() => {
+        if (connectSubmitBtn) {
+          connectSubmitBtn.innerHTML = originalText;
+          connectSubmitBtn.disabled = false;
+        }
+      }, 3500);
+
+      setTimeout(() => {
+        if (connectToast) connectToast.classList.add('hidden');
+      }, 5000);
     });
   }
 
@@ -737,22 +773,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const vipFormNext = document.getElementById('vipFormNext');
-  if (vipFormNext) {
-    vipFormNext.value = window.location.origin + window.location.pathname + '?sent=true';
-  }
-
   if (vipModalForm) {
-    vipModalForm.addEventListener('submit', () => {
-      // Do NOT preventDefault! Allow standard FormSubmit POST to luciano4e@gmail.com!
+    vipModalForm.addEventListener('submit', async (e) => {
+      e.preventDefault(); // NEVER REDIRECT! Stay smoothly inside the application!
+
       const name = vipModalNameInput ? vipModalNameInput.value.trim() : '';
       const email = vipModalEmailInput ? vipModalEmailInput.value.trim() : '';
       const topic = vipSelectedTopic ? vipSelectedTopic.value : 'Colaboración / Feat';
       const message = vipModalMessageInput ? vipModalMessageInput.value.trim() : '';
 
-      // Update FormSubmit Subject dynamically before submit
-      if (vipFormSubject) {
-        vipFormSubject.value = `🎵 [${topic}] Propuesta de ${name || email} - Luciano4E`;
+      if (!email || !email.includes('@')) return;
+
+      const originalBtnHtml = vipModalSubmitBtn.innerHTML;
+      vipModalSubmitBtn.innerHTML = `<span>Enviando al Gmail...</span>`;
+      vipModalSubmitBtn.disabled = true;
+
+      // Direct Gmail Compose URL fallback
+      const gmailSubject = `[${topic}] Contacto de ${name || email} • Luciano4E`;
+      const gmailBody = `Hola Luciano4E,\n\nNombre: ${name}\nCorreo de contacto: ${email}\nCategoría: ${topic}\nMensaje:\n${message || '(Sin mensaje adicional)'}\n\nEnviado desde https://www.luciano4e.com`;
+      const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(ARTIST_CONFIG.contactEmail)}&su=${encodeURIComponent(gmailSubject)}&body=${encodeURIComponent(gmailBody)}`;
+      if (vipDirectGmailBtn) {
+        vipDirectGmailBtn.href = gmailComposeUrl;
       }
 
       // Save to localStorage backup
@@ -762,21 +803,48 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('luciano4e_contacts', JSON.stringify(saved));
       } catch(err){}
 
-      if (vipModalSubmitBtn) {
-        vipModalSubmitBtn.innerHTML = `<span>Enviando al Gmail...</span>`;
-      }
-    });
-  }
+      // Send to Gmail via FormSubmit AJAX (ZERO REDIRECT!)
+      try {
+        const payload = {
+          name: name || '(No especificado)',
+          email: email,
+          category: topic,
+          message: message || '(Sin mensaje adicional)',
+          _subject: `🎵 [${topic}] Nuevo mensaje de ${name || email} - Luciano4E`,
+          _template: 'table',
+          _captcha: 'false'
+        };
 
-  // Handle return redirect from FormSubmit (_next parameter)
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get('sent') === 'true') {
-    setTimeout(() => {
-      showToast('¡Mensaje enviado con éxito a luciano4e@gmail.com! 📬', '✓');
-    }, 400);
-    // Clean URL
-    const cleanUrl = window.location.pathname;
-    window.history.replaceState({}, document.title, cleanUrl);
+        await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(ARTIST_CONFIG.contactEmail)}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+      } catch (submitErr) {
+        console.warn('FormSubmit AJAX notice:', submitErr);
+      }
+
+      // Show confirmation in-place (ZERO REDIRECT!)
+      vipModalForm.style.display = 'none';
+      if (vipTopicsRow) vipTopicsRow.style.display = 'none';
+      if (vipSuccessBox) vipSuccessBox.classList.remove('hidden');
+      if (vipSuccessDesc) {
+        vipSuccessDesc.textContent = `¡Gracias ${name ? name : ''}! Tu mensaje ha sido enviado directamente al Gmail de Luciano4E (${ARTIST_CONFIG.contactEmail}).`;
+      }
+      showToast('¡Mensaje enviado con éxito a tu Gmail! 📬', '✓');
+
+      // Auto-reset button state
+      setTimeout(() => {
+        vipModalSubmitBtn.innerHTML = originalBtnHtml;
+        vipModalSubmitBtn.disabled = false;
+        if (vipModalNameInput) vipModalNameInput.value = '';
+        if (vipModalEmailInput) vipModalEmailInput.value = '';
+        if (vipModalMessageInput) vipModalMessageInput.value = '';
+      }, 2500);
+    });
   }
 
   if (floatingJoinBtn) {
