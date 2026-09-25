@@ -4,6 +4,46 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
+  // App-Grade Mobile Touch & Zoom Controls
+  // ==========================================
+  // Prevent iOS pinch-to-zoom gestures
+  document.addEventListener('gesturestart', (e) => e.preventDefault(), { passive: false });
+  document.addEventListener('gesturechange', (e) => e.preventDefault(), { passive: false });
+  document.addEventListener('gestureend', (e) => e.preventDefault(), { passive: false });
+
+  // Prevent double-tap zoom on non-interactive elements
+  let lastTouchEndTime = 0;
+  document.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEndTime <= 300) {
+      if (!e.target.closest('input, textarea, select, button, a')) {
+        e.preventDefault();
+      }
+    }
+    lastTouchEndTime = now;
+  }, { passive: false });
+
+  // Universal iOS Background Scroll Lock
+  let savedScrollY = 0;
+  let isBodyLocked = false;
+
+  function lockBodyScroll() {
+    if (isBodyLocked) return;
+    savedScrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.classList.add('modal-open');
+    isBodyLocked = true;
+  }
+
+  function unlockBodyScroll() {
+    if (!isBodyLocked) return;
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    isBodyLocked = false;
+    window.scrollTo(0, savedScrollY);
+  }
+
+  // ==========================================
   // CONFIGURATION - Easily customize links here
   // ==========================================
   const ARTIST_CONFIG = {
@@ -265,12 +305,12 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxImg.src = item.src;
     lightboxCaption.textContent = item.caption;
     lightboxModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
+    lockBodyScroll();
   }
 
   function closeLightbox() {
     lightboxModal.classList.add('hidden');
-    document.body.style.overflow = '';
+    unlockBodyScroll();
   }
 
   function nextLightboxPhoto() {
@@ -476,14 +516,14 @@ document.addEventListener('DOMContentLoaded', () => {
     renderRealQRCode();
     if (qrModal) {
       qrModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
     }
   }
 
   function closeQRModal() {
     if (qrModal) {
       qrModal.classList.add('hidden');
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }
   }
 
@@ -636,14 +676,14 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSocialShareLinks();
     if (shareModal) {
       shareModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
     }
   }
 
   function closeShareModal() {
     if (shareModal) {
       shareModal.classList.add('hidden');
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }
   }
 
@@ -734,7 +774,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function openVipEmailModal() {
     if (vipEmailModal) {
       vipEmailModal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      lockBodyScroll();
       if (vipSuccessBox) vipSuccessBox.classList.add('hidden');
       if (vipModalForm) vipModalForm.style.display = 'flex';
       if (vipTopicsRow) vipTopicsRow.style.display = 'flex';
@@ -751,7 +791,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeVipEmailModal() {
     if (vipEmailModal) {
       vipEmailModal.classList.add('hidden');
-      document.body.style.overflow = '';
+      unlockBodyScroll();
     }
   }
 
@@ -854,45 +894,200 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // Mobile Swipe-to-Dismiss on Glass Sheets
+  // App-Grade Mobile Sheet Gestures (Swipe Down to Dismiss)
   // ==========================================
-  document.querySelectorAll('.apple-glass-sheet').forEach(sheet => {
+  function setupAppSheetGestures(modalEl, sheetEl, closeFn) {
+    if (!sheetEl || !modalEl) return;
+
     let startY = 0;
+    let startX = 0;
     let currentY = 0;
     let isTracking = false;
+    let isDragging = false;
+    let startTime = 0;
+    const backdrop = modalEl.querySelector('.modal-glass-backdrop');
 
-    sheet.addEventListener('touchstart', (e) => {
-      if (sheet.scrollTop <= 0) {
+    // Prevent backdrop from ever scrolling background
+    if (backdrop) {
+      backdrop.addEventListener('touchmove', (e) => {
+        if (e.cancelable) e.preventDefault();
+      }, { passive: false });
+    }
+
+    sheetEl.addEventListener('touchstart', (e) => {
+      if (sheetEl.scrollTop <= 0) {
         startY = e.touches[0].clientY;
+        startX = e.touches[0].clientX;
         currentY = startY;
         isTracking = true;
+        isDragging = false;
+        startTime = Date.now();
       }
     }, { passive: true });
 
-    sheet.addEventListener('touchmove', (e) => {
+    sheetEl.addEventListener('touchmove', (e) => {
       if (!isTracking) return;
       currentY = e.touches[0].clientY;
+      const currentX = e.touches[0].clientX;
       const diffY = currentY - startY;
-      if (diffY > 0 && sheet.scrollTop <= 0) {
-        sheet.style.transform = `translateY(${diffY * 0.7}px)`;
-        sheet.style.transition = 'none';
+      const diffX = currentX - startX;
+
+      if (diffY > 4 && Math.abs(diffY) > Math.abs(diffX) && sheetEl.scrollTop <= 0) {
+        isDragging = true;
+        if (e.cancelable) e.preventDefault();
+
+        sheetEl.style.transition = 'none';
+        sheetEl.style.transform = `translateY(${diffY}px)`;
+        if (backdrop) {
+          backdrop.style.transition = 'none';
+          backdrop.style.opacity = Math.max(0, 1 - (diffY / 320));
+        }
+      }
+    }, { passive: false });
+
+    sheetEl.addEventListener('touchend', () => {
+      if (!isTracking || !isDragging) {
+        isTracking = false;
+        isDragging = false;
+        return;
+      }
+      isTracking = false;
+      isDragging = false;
+
+      const diffY = currentY - startY;
+      const elapsedTime = Date.now() - startTime;
+      const velocity = diffY / Math.max(elapsedTime, 1);
+
+      if (diffY > 65 || (diffY > 25 && velocity > 0.45)) {
+        sheetEl.style.transition = 'transform 0.26s cubic-bezier(0.32, 1, 0.23, 1)';
+        sheetEl.style.transform = 'translateY(110%)';
+        if (backdrop) {
+          backdrop.style.transition = 'opacity 0.26s ease';
+          backdrop.style.opacity = '0';
+        }
+        if (navigator.vibrate) navigator.vibrate(10);
+        setTimeout(() => {
+          closeFn();
+          sheetEl.style.transform = '';
+          sheetEl.style.transition = '';
+          if (backdrop) {
+            backdrop.style.opacity = '';
+            backdrop.style.transition = '';
+          }
+        }, 260);
+      } else {
+        sheetEl.style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        sheetEl.style.transform = 'translateY(0)';
+        if (backdrop) {
+          backdrop.style.transition = 'opacity 0.3s ease';
+          backdrop.style.opacity = '1';
+        }
+        setTimeout(() => {
+          sheetEl.style.transition = '';
+          if (backdrop) backdrop.style.transition = '';
+        }, 320);
       }
     }, { passive: true });
+  }
 
-    sheet.addEventListener('touchend', () => {
-      if (!isTracking) return;
-      isTracking = false;
-      const diffY = currentY - startY;
-      sheet.style.transition = 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
-      if (diffY > 80 && sheet.scrollTop <= 0) {
-        closeVipEmailModal();
-        closeQRModal();
-        closeShareModal();
-      } else {
-        sheet.style.transform = '';
+  // Bind native slide-down to dismiss on all bottom sheets
+  if (shareModal) setupAppSheetGestures(shareModal, shareModal.querySelector('.apple-glass-sheet'), closeShareModal);
+  if (vipEmailModal) setupAppSheetGestures(vipEmailModal, vipEmailModal.querySelector('.apple-glass-sheet'), closeVipEmailModal);
+  if (qrModal) setupAppSheetGestures(qrModal, qrModal.querySelector('.apple-glass-sheet'), closeQRModal);
+
+  // ==========================================
+  // Lightbox App Gestures: Swipe Left/Right for Photos, Swipe Down to Close
+  // ==========================================
+  if (lightboxModal) {
+    let lbStartX = 0;
+    let lbStartY = 0;
+    let lbCurrentX = 0;
+    let lbCurrentY = 0;
+    let lbIsTracking = false;
+
+    lightboxModal.addEventListener('touchstart', (e) => {
+      lbStartX = e.touches[0].clientX;
+      lbStartY = e.touches[0].clientY;
+      lbCurrentX = lbStartX;
+      lbCurrentY = lbStartY;
+      lbIsTracking = true;
+    }, { passive: true });
+
+    lightboxModal.addEventListener('touchmove', (e) => {
+      if (!lbIsTracking) return;
+      lbCurrentX = e.touches[0].clientX;
+      lbCurrentY = e.touches[0].clientY;
+      const diffY = lbCurrentY - lbStartY;
+      const diffX = lbCurrentX - lbStartX;
+
+      if (e.cancelable) e.preventDefault();
+
+      if (Math.abs(diffY) > Math.abs(diffX) && diffY > 0) {
+        if (lightboxImg) {
+          lightboxImg.style.transition = 'none';
+          lightboxImg.style.transform = `translateY(${diffY}px) scale(${Math.max(0.85, 1 - diffY / 700)})`;
+        }
+      } else if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (lightboxImg) {
+          lightboxImg.style.transition = 'none';
+          lightboxImg.style.transform = `translateX(${diffX * 0.75}px)`;
+        }
       }
-    });
-  });
+    }, { passive: false });
+
+    lightboxModal.addEventListener('touchend', () => {
+      if (!lbIsTracking) return;
+      lbIsTracking = false;
+
+      const diffX = lbCurrentX - lbStartX;
+      const diffY = lbCurrentY - lbStartY;
+
+      if (Math.abs(diffY) > Math.abs(diffX) && diffY > 60) {
+        if (lightboxImg) {
+          lightboxImg.style.transition = 'transform 0.24s ease, opacity 0.24s ease';
+          lightboxImg.style.transform = 'translateY(120px) scale(0.8)';
+          lightboxImg.style.opacity = '0';
+        }
+        if (navigator.vibrate) navigator.vibrate(10);
+        setTimeout(() => {
+          closeLightbox();
+          if (lightboxImg) {
+            lightboxImg.style.transform = '';
+            lightboxImg.style.opacity = '';
+            lightboxImg.style.transition = '';
+          }
+        }, 240);
+      } else if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 45) {
+        if (lightboxImg) {
+          lightboxImg.style.transition = 'transform 0.18s ease, opacity 0.18s ease';
+          lightboxImg.style.opacity = '0';
+          lightboxImg.style.transform = diffX < 0 ? 'translateX(-80px)' : 'translateX(80px)';
+        }
+        if (navigator.vibrate) navigator.vibrate(10);
+        setTimeout(() => {
+          if (diffX < 0) {
+            nextLightboxPhoto();
+          } else {
+            prevLightboxPhoto();
+          }
+          if (lightboxImg) {
+            lightboxImg.style.transition = 'none';
+            lightboxImg.style.transform = diffX < 0 ? 'translateX(80px)' : 'translateX(-80px)';
+            requestAnimationFrame(() => {
+              lightboxImg.style.transition = 'transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease';
+              lightboxImg.style.transform = 'translateX(0)';
+              lightboxImg.style.opacity = '1';
+            });
+          }
+        }, 180);
+      } else {
+        if (lightboxImg) {
+          lightboxImg.style.transition = 'transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+          lightboxImg.style.transform = '';
+        }
+      }
+    }, { passive: true });
+  }
 
 });
 

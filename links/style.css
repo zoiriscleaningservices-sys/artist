@@ -48,11 +48,19 @@ html {
   font-size: 16px;
   min-height: 100%;
   min-height: 100dvh;
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   background-color: var(--bg-black);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  max-width: 100vw;
+  width: 100%;
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
@@ -64,7 +72,44 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior-y: contain;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
   -webkit-touch-callout: none;
+  user-select: none;
+}
+
+body.modal-open {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+  touch-action: none !important;
+}
+
+/* Allow text selection in inputs and handle */
+input, textarea, .copy-input, .handle-text, .browser-url-text {
+  user-select: text;
+}
+
+/* App-wide Zoom Prevention on Mobile Inputs */
+input,
+textarea,
+select,
+button {
+  touch-action: manipulation;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+textarea,
+select,
+.connect-input,
+.vip-email-input,
+.vip-text-input,
+.copy-input {
+  font-size: 16px !important; /* Critical: Stops iOS Safari from auto-zooming on focus */
 }
 
 /* Ambient Cosmic Glow Mesh (Behind all content, produces authentic Apple Vision Liquid Glass refractions) */
@@ -711,11 +756,12 @@ body {
   border: none;
   background: transparent;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 16px !important;
   color: #090a10;
   font-weight: 500;
   outline: none;
   min-width: 0;
+  -webkit-appearance: none;
 }
 
 .connect-input::placeholder {
@@ -1730,9 +1776,10 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 16px !important;
   outline: none;
   transition: all 0.3s ease;
+  -webkit-appearance: none;
 }
 
 .vip-email-input:focus,
@@ -2189,7 +2236,7 @@ body {
   background: transparent;
   border: none;
   color: #f1f5f9;
-  font-size: 0.84rem;
+  font-size: 16px !important;
   font-weight: 500;
   font-family: -apple-system, BlinkMacSystemFont, var(--font-body);
   letter-spacing: -0.2px;
@@ -2198,6 +2245,7 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  -webkit-appearance: none;
 }
 
 .apple-copy-btn {
@@ -2866,7 +2914,7 @@ button:active,
   }
 
   .connect-input {
-    font-size: clamp(0.86rem, 3vw, 0.94rem);
+    font-size: 16px !important;
   }
 
   .connect-btn {
