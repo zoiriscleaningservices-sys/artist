@@ -74,39 +74,41 @@ body {
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+  contain: strict;
+  transform: translateZ(0);
 }
 
 .glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
   opacity: 0.35;
-  mix-blend-mode: screen;
-  will-change: transform;
+  pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .glow-orb.orb-1 {
-  width: 420px;
-  height: 420px;
-  background: radial-gradient(circle, #0095f6 0%, #6366f1 70%, transparent 100%);
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(0, 149, 246, 0.45) 0%, rgba(99, 102, 241, 0.22) 45%, transparent 70%);
   top: -50px;
   left: -120px;
   animation: floatOrb1 18s ease-in-out infinite alternate;
 }
 
 .glow-orb.orb-2 {
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, #d946ef 0%, #8b5cf6 65%, transparent 100%);
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.38) 0%, rgba(139, 92, 246, 0.2) 48%, transparent 72%);
   top: 40%;
   right: -140px;
   animation: floatOrb2 22s ease-in-out infinite alternate;
 }
 
 .glow-orb.orb-3 {
-  width: 360px;
-  height: 360px;
-  background: radial-gradient(circle, #00f5ff 0%, #0077e6 70%, transparent 100%);
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.35) 0%, rgba(0, 119, 230, 0.18) 48%, transparent 70%);
   bottom: 5%;
   left: 15%;
   animation: floatOrb3 16s ease-in-out infinite alternate;
@@ -1257,7 +1259,9 @@ body {
   box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.3);
   overflow: hidden;
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
-  transform-style: preserve-3d;
+  contain: paint layout;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .apple-glass-card:hover {
@@ -2132,18 +2136,23 @@ body {
   color: #fff;
 }
 
-.share-verified-mark {
+.share-verified-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 149, 246, 0.65));
+  transition: transform 0.25s ease;
+}
+
+.share-verified-badge:hover {
+  transform: scale(1.15) rotate(4deg);
+}
+
+.share-verified-badge .official-verified-badge {
+  display: block;
   width: 18px;
   height: 18px;
-  background: #0095f6;
-  color: #fff;
-  border-radius: 50%;
-  font-size: 0.72rem;
-  font-weight: 900;
-  box-shadow: 0 0 10px rgba(0, 149, 246, 0.6);
 }
 
 .share-card-handle {
@@ -2690,8 +2699,9 @@ body {
   overflow: hidden;
   border-radius: var(--radius-card);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-style: preserve-3d;
-  will-change: transform;
+  contain: paint layout;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .media-card::before {
